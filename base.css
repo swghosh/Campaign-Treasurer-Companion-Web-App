@@ -4,7 +4,7 @@
 body {
     margin: 0;
     font-family: 'Helvetica Neue';
-    font-weight: 200;
+    font-weight: 300;
 }
 div.bars {
     margin: 0;
@@ -29,7 +29,7 @@ div.topbar h1 {
     margin-bottom: 0;
     padding-top: 1vh;
 }
-div.topbar small {
+div.topbar small.time {
     display: block;
     margin-top: -0.5vh;
     padding: 0;
@@ -46,7 +46,6 @@ div.bottombar {
     height: 10vh;
     width: 100vw;
     background-color: rgba(100, 100, 0, 0.7);
-    max-height: 120px;
 }
 ul.tabs {
     color: #fff;
@@ -58,23 +57,24 @@ ul.tabs {
 ul.tabs li {
     float: left;
     margin: 0;
-    padding-top: 4vh;
+    padding-top: 3.65vh;
+    padding-bottom: 3.65vh;
     display: block;
     width: 20vw;
-    height: 10vh;
     text-align: center;
-    transition: all 0.1s ease;
+    transition: all 0.5s ease-in-out;
 }
 ul.tabs li:hover {
-    height: 10vh;
-    background-color: rgba(100, 100, 0, 0.8);
-    font-size: 
+    background-color: rgba(100, 100, 0, 1);
 }
-img.tab {
-    max-height: 90px;
-    display: inline-block;
+span.emoji {
+    font-size: 0.7em;
+    padding: 2%;
 }
-
+a.tabitem {
+    color: #fff;
+    text-decoration: none;
+}
 @media only screen and (min-width : 1024px) {
     div.bars {
         position: fixed;
@@ -85,5 +85,6 @@ img.tab {
     }
     div.bottombar {
         position: relative;
+        background-color: rgba(100, 100, 0, 0.8);
     }
 }
