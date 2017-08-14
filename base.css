@@ -5,6 +5,7 @@ body {
     margin: 0;
     font-family: 'Helvetica Neue';
     font-weight: 300;
+    background-color: rgba(0, 0, 0, 0.15);
 }
 div.bars {
     margin: 0;
@@ -16,7 +17,7 @@ div.topbar {
     margin: 0;
     top: 0;
     width: 100%;
-    background-color: rgba(100, 100, 0, 0.9);
+    background-color: rgba(50, 90, 130, 0.9);
     text-align: center;
 }
 div.topbar h1 {
@@ -28,6 +29,8 @@ div.topbar h1 {
     margin-top: 0;
     margin-bottom: 0;
     padding-top: 1vh;
+    margin-left: 2%;
+    margin-right: 5%;
 }
 div.topbar small.time {
     display: block;
@@ -37,7 +40,7 @@ div.topbar small.time {
     color: #fff;
     font-size: 0.8em;
     margin-bottom: 0;
-    padding-bottom: 1vh;
+    padding-bottom: 1.5vh;
 }
 div.bottombar {
     position: fixed;
@@ -45,27 +48,27 @@ div.bottombar {
     bottom: 0;
     height: 10vh;
     width: 100vw;
-    background-color: rgba(100, 100, 0, 0.7);
+    background-color: rgba(50, 90, 130, 0.7);
 }
 ul.tabs {
     color: #fff;
     list-style-type: none;
     margin: 0;
     padding: 0;
-    height: 10vh;
+    height: 5vh;
 }
 ul.tabs li {
     float: left;
     margin: 0;
-    padding-top: 3.65vh;
-    padding-bottom: 3.65vh;
+    padding-top: 2.4vh;
+    padding-bottom: 2.4vh;
     display: block;
     width: 20vw;
     text-align: center;
     transition: all 0.5s ease-in-out;
 }
 ul.tabs li:hover {
-    background-color: rgba(100, 100, 0, 1);
+    background-color: rgba(50, 90, 130, 1);
 }
 span.emoji {
     font-size: 0.7em;
@@ -85,6 +88,6 @@ a.tabitem {
     }
     div.bottombar {
         position: relative;
-        background-color: rgba(100, 100, 0, 0.8);
+        background-color: rgba(50, 90, 130, 0.8);
     }
 }
