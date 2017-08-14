@@ -103,6 +103,7 @@ table.view tr.sector {
 table.view tr.stock {
     color: #000;
     background-color: #fff;
+    cursor: pointer;
 }
 table.view td {
     padding-left: 1vw;
@@ -116,6 +117,9 @@ table.view td.sector{
     padding-bottom: 1vh;
     text-transform: uppercase;
     color: #777;
+}
+table.view td.copyright {
+    text-transform: none;
 }
 table.view td.name {
     padding-left: 3vw;

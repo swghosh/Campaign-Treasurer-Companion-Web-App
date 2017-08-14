@@ -20,7 +20,7 @@
             </div>
             <div class="bottombar">
                 <ul class="tabs">
-                    <a href="/" class="tabitem"><li><span class="emoji">🏠</span><br>Home</li></a>
+                    <a href="index.php" class="tabitem"><li><span class="emoji">🏠</span><br>Home</li></a>
                     <a href="details.php" class="tabitem"><li><span class="emoji">📈</span><br>Details</li></a>
                     <a href="trader" class="tabitem"><li><span class="emoji">💵</span><br>Trader</li></a>
                     <a href="news.php" class="tabitem"><li><span class="emoji">📰</span><br>News</li></a>
