@@ -1,6 +1,4 @@
-* {
-    transition: all 2s ease-in-out;
-}
+
 body {
     margin: 0;
     font-family: 'Helvetica Neue';
@@ -17,7 +15,7 @@ div.topbar {
     margin: 0;
     top: 0;
     width: 100%;
-    background-color: rgba(50, 90, 130, 0.9);
+    background-color: rgba(50, 110, 130, 0.99);
     text-align: center;
 }
 div.topbar h1 {
@@ -48,7 +46,7 @@ div.bottombar {
     bottom: 0;
     height: 10vh;
     width: 100vw;
-    background-color: rgba(50, 90, 130, 0.7);
+    background-color: rgba(50, 90, 130, 1);
 }
 ul.tabs {
     color: #fff;
@@ -61,14 +59,18 @@ ul.tabs li {
     float: left;
     margin: 0;
     padding-top: 2.4vh;
-    padding-bottom: 2.4vh;
+    padding-bottom: 2.6vh;
     display: block;
     width: 20vw;
+    height: 5vh;
     text-align: center;
     transition: all 0.5s ease-in-out;
 }
+ul.tabs li#selected {
+    background-color: rgba(60, 100, 200, 0.9);
+}
 ul.tabs li:hover {
-    background-color: rgba(50, 90, 130, 1);
+    background-color: rgba(80, 90, 150, 0.9);
 }
 span.emoji {
     font-size: 0.7em;
@@ -77,6 +79,70 @@ span.emoji {
 a.tabitem {
     color: #fff;
     text-decoration: none;
+}
+table.view {
+    margin-top: 17vh;
+    margin-bottom: 20vh;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    overflow: auto;
+}
+table.view tr {
+    padding: 0;
+    margin: 0;
+}
+table.view tr.sector {
+    background-color: none;
+}
+table.view tr.stock {
+    color: #000;
+    background-color: #fff;
+}
+table.view td {
+    padding-left: 1vw;
+    padding-bottom: 2vh;
+    padding-top: 2vh;
+    padding-right: 1vw;
+}
+table.view td.sector{
+    padding: 3vh;
+    padding-left: 5vw;
+    padding-bottom: 1vh;
+    text-transform: uppercase;
+    color: #777;
+}
+table.view td.name {
+    padding-left: 3vw;
+}
+table.view td.current {
+    text-align: center;
+    color: #09f;
+}
+table.view td.difference {
+    text-align: center;
+}
+table.view td.percentage {
+    text-align: right;
+    padding-right: 2vw;
+}
+table.view td.high {
+    color: green;
+}
+table.view td.low {
+    color: red;
+}
+span.triangle {
+    margin: 0;
+    padding: 0;
+    padding-right: 1vw;
+}
+span.not_inverted {
+    color: green;
+}
+span.inverted {
+    color: red;
 }
 @media only screen and (min-width : 1024px) {
     div.bars {
@@ -88,6 +154,9 @@ a.tabitem {
     }
     div.bottombar {
         position: relative;
-        background-color: rgba(50, 90, 130, 0.8);
+        background-color: rgba(50, 90, 130);
+    }
+    table.view {
+        margin-top: 20vh;
     }
 }
