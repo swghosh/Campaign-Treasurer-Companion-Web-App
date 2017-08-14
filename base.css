@@ -1,0 +1,89 @@
+* {
+    transition: all 2s ease-in-out;
+}
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue';
+    font-weight: 200;
+}
+div.bars {
+    margin: 0;
+    padding: 0;
+}
+div.topbar {
+    font-size: 0.9em;
+    position: fixed;
+    margin: 0;
+    top: 0;
+    width: 100%;
+    background-color: rgba(100, 100, 0, 0.9);
+    text-align: center;
+}
+div.topbar h1 {
+    text-align: center;
+    color: #fff;
+    text-transform: capitalize;
+    font-family: 'Helvetica Neue';
+    font-weight: 200;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 1vh;
+}
+div.topbar small {
+    display: block;
+    margin-top: -0.5vh;
+    padding: 0;
+    text-align: center;
+    color: #fff;
+    font-size: 0.8em;
+    margin-bottom: 0;
+    padding-bottom: 1vh;
+}
+div.bottombar {
+    position: fixed;
+    margin: 0;
+    bottom: 0;
+    height: 10vh;
+    width: 100vw;
+    background-color: rgba(100, 100, 0, 0.7);
+    max-height: 120px;
+}
+ul.tabs {
+    color: #fff;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 10vh;
+}
+ul.tabs li {
+    float: left;
+    margin: 0;
+    padding-top: 4vh;
+    display: block;
+    width: 20vw;
+    height: 10vh;
+    text-align: center;
+    transition: all 0.1s ease;
+}
+ul.tabs li:hover {
+    height: 10vh;
+    background-color: rgba(100, 100, 0, 0.8);
+    font-size: 
+}
+img.tab {
+    max-height: 90px;
+    display: inline-block;
+}
+
+@media only screen and (min-width : 1024px) {
+    div.bars {
+        position: fixed;
+        top: 0;
+    }
+    div.topbar {
+        position: relative;
+    }
+    div.bottombar {
+        position: relative;
+    }
+}
