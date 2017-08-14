@@ -1,4 +1,6 @@
-
+* {
+    transition: all 0.5s;
+}
 body {
     margin: 0;
     font-family: 'Helvetica Neue';
@@ -83,7 +85,7 @@ a.tabitem {
 table.view {
     font-family: 'Helvetica Neue';
     font-weight: 300;
-    margin-top: 17vh;
+    margin-top: 20vh;
     margin-bottom: 20vh;
     width: 100%;
     margin-left: 0;

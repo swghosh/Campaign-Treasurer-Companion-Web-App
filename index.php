@@ -24,11 +24,4 @@
             <tr class="stock"><td class="name">Walmart<br><small>Retail</small></td><td class="current">$10.0</td><td class="difference"><span class="not_inverted triangle">&#9650;</span>$2.0</td><td class="percentage high">1.30%</td></tr>
             <tr class="stock"><td class="name">Alibaba<br><small>E-Commerce</small></td><td class="current">$10.0</td><td class="difference"><span class="inverted triangle">&#9660;</span>$2.0</td><td class="percentage low">1.30%</td></tr>
         </table>
-    </body>
-    <script>
-        var uri = '<?php echo $_SERVER['SCRIPT_NAME']; ?>';
-        uri = uri.substring(1);
-        var li = document.querySelector('a[href="' + uri + '"] li');
-        li.setAttribute('id', "selected");
-    </script>
-</html>
+<?php include('foot.php'); ?>
