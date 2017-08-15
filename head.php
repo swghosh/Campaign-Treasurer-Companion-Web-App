@@ -1,12 +1,13 @@
 <?php
-    $page_titles = array(
-        '/index.php' => 'Home',
-        '/details.php' => 'Details',
-        '/trader' => 'Trader',
-        '/news.php' => 'News',
-        '/about.php' => 'About'
+    $current_script = $_SERVER['SCRIPT_NAME'];
+    $pages = array(
+        '/index.php' => array('Home', '🏠'),
+        '/details.php' => array('Details', '📈'),
+        '/trader' => array('Trader', '💵'),
+        '/news.php' => array('News', '📰'),
+        '/about.php' => array('About', '🔬')
     );
-    $page_title = $page_titles[$_SERVER['SCRIPT_NAME']];
+    $page_title = $pages[$current_script][0];
 ?>
 
 <!DOCTYPE html>
@@ -31,11 +32,20 @@
             </div>
             <div class="bottombar">
                 <ul class="tabs">
-                    <a href="index.php" class="tabitem"><li><span class="emoji">🏠</span><br>Home</li></a>
-                    <a href="details.php" class="tabitem"><li><span class="emoji">📈</span><br>Details</li></a>
-                    <a href="trader" class="tabitem"><li><span class="emoji">💵</span><br>Trader</li></a>
-                    <a href="news.php" class="tabitem"><li><span class="emoji">📰</span><br>News</li></a>
-                    <a href="about.php" class="tabitem"><li><span class="emoji">🔬</span><br>About</li></a>
+                    <?php
+                        foreach($pages as $script_name => $page) {
+                            $title = $page[0];
+                            $emoji = $page[1];
+                            
+                            if(strpos($script_name, $current_script) != -1) {
+                                $str = '<a href="'.$script_name.'" class="tabitem"><li id="selected"><span class="emoji">'.$emoji.'</span><br>'.$title.'</li></a>';
+                            }
+                            else {
+                                $str = '<a href="'.$script_name.'" class="tabitem"><li><span class="emoji">'.$emoji.'</span><br>'.$title.'</li></a>';
+                            }
+                            echo $str."\n";
+                        }
+                    ?>
                 </ul>
             </div>
         </div>
