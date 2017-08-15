@@ -1,4 +1,6 @@
-<?php include('head.php'); ?>
+<?php 
+    include('head.php'); 
+?>
         <table class="view">
             <tr class="sector"><td colspan="4" class="sector">Crypto-currency</td></tr>
             <tr class="stock"><td class="name">Bitcoin</td><td class="current" colspan="3">$10.0</td></tr>
@@ -24,4 +26,7 @@
             <tr class="stock"><td class="name">Walmart<br><small>Retail</small></td><td class="current">$10.0</td><td class="difference"><span class="not_inverted triangle">&#9650;</span>$2.0</td><td class="percentage high">1.30%</td></tr>
             <tr class="stock"><td class="name">Alibaba<br><small>E-Commerce</small></td><td class="current">$10.0</td><td class="difference"><span class="inverted triangle">&#9660;</span>$2.0</td><td class="percentage low">1.30%</td></tr>
         </table>
-<?php include('foot.php'); ?>
+<?php 
+    $scripts = array('tabselect.js');
+    include('foot.php'); 
+?>

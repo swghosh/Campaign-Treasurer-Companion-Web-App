@@ -1,8 +1,9 @@
-</body>
-    <script>
-        var uri = '<?php echo $_SERVER['SCRIPT_NAME']; ?>';
-        uri = uri.substring(uri.lastIndexOf('/') + 1);
-        var li = document.querySelector('a[href="' + uri + '"] li');
-        li.setAttribute('id', "selected");
-    </script>
+    </body>
+    <?php
+        if(isset($scripts)) {
+            foreach($scripts as $script) {
+                echo '<script src="'.$script.'"></script>\n';
+            }
+        }
+    ?>
 </html>
