@@ -85,8 +85,8 @@ a.tabitem {
 table.view {
     font-family: 'Helvetica Neue';
     font-weight: 300;
-    margin-top: 20vh;
-    margin-bottom: 20vh;
+    margin-top: 22vh;
+    margin-bottom: 22vh;
     width: 100%;
     margin-left: 0;
     margin-right: 0;
@@ -105,6 +105,10 @@ table.view tr.stock {
     background-color: #fff;
     cursor: pointer;
 }
+table.view tr.news {
+    color: #000;
+    background-color: #fff;
+}
 table.view td {
     padding-left: 1vw;
     padding-bottom: 2vh;
@@ -120,6 +124,31 @@ table.view td.sector{
 }
 table.view td.copyright {
     text-transform: none;
+}
+table.view span.arrow {
+    
+}
+a.author {
+    color: inherit;
+    text-decoration: underline;
+}
+a.author:hover {
+    text-decoration: none;
+}
+table.view td.time {
+    display: block;
+    font-size: 0.7em;
+    margin: 0;
+    padding 0;
+    padding-top: 2vh;
+    padding-left: 5vw;
+    color: #777;
+}
+table.view td.news {
+    display: block;
+    margin: 0;
+    padding-top: 0;
+    padding-left: 2.5vw;
 }
 table.view td.name {
     padding-left: 3vw;
