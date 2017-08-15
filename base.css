@@ -126,7 +126,8 @@ table.view td.copyright {
     text-transform: none;
 }
 table.view span.arrow {
-    
+    display: inline-block;
+    margin-left: 0.5%;
 }
 a.author {
     color: inherit;
@@ -149,6 +150,7 @@ table.view td.news {
     margin: 0;
     padding-top: 0;
     padding-left: 2.5vw;
+    padding-bottom: 3vh;
 }
 table.view td.name {
     padding-left: 3vw;
