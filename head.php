@@ -1,8 +1,19 @@
+<?php
+    $page_titles = array(
+        '/index.php' => 'Home',
+        '/details.php' => 'Details',
+        '/trader' => 'Trader',
+        '/news.php' => 'News',
+        '/about.php' => 'About'
+    );
+    $page_title = $page_titles[$_SERVER['SCRIPT_NAME']];
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Campaign Treasurer Companion</title>
+        <title>Campaign Treasurer Companion | <?php echo $page_title; ?></title>
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="base.css" type="text/css" />
         <meta name="theme-color" content="#326e82">

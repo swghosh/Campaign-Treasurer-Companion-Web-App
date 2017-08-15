@@ -19,6 +19,7 @@ div.topbar {
     width: 100%;
     background-color: rgba(50, 110, 130, 0.99);
     text-align: center;
+    box-shadow: 0 0 20px #046;
 }
 div.topbar h1 {
     text-align: center;
@@ -49,6 +50,7 @@ div.bottombar {
     height: 10vh;
     width: 100vw;
     background-color: rgba(50, 90, 130, 1);
+    box-shadow: 0 0 20px #000;
 }
 ul.tabs {
     color: #fff;
@@ -67,6 +69,7 @@ ul.tabs li {
     height: 5vh;
     text-align: center;
     transition: all 0.5s ease-in-out;
+    box-shadow: 0 0 1px #7cf;
 }
 ul.tabs li#selected {
     background-color: rgba(60, 100, 200, 0.9);
