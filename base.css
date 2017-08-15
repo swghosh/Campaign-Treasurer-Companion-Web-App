@@ -19,7 +19,7 @@ div.topbar {
     width: 100%;
     background-color: rgba(50, 110, 130, 0.99);
     text-align: center;
-    box-shadow: 0 0 10px #046;
+    box-shadow: 0 0 7px #046;
 }
 div.topbar h1 {
     text-align: center;
