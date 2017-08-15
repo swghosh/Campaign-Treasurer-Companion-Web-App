@@ -37,7 +37,7 @@
                             $title = $page[0];
                             $emoji = $page[1];
                             
-                            if(strpos($script_name, $current_script) != -1) {
+                            if(strcmp($script_name, $current_script) === 0) {
                                 $str = '<a href="'.$script_name.'" class="tabitem"><li id="selected"><span class="emoji">'.$emoji.'</span><br>'.$title.'</li></a>';
                             }
                             else {
