@@ -2,6 +2,6 @@
     include('head.php'); 
 ?>
 <?php 
-    $scripts = array('tabselect.js');
+    $scripts = array('common.js');
     include('foot.php'); 
 ?>

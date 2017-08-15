@@ -1,0 +1,1 @@
+// common script, javascript code that is to be executed on all pages

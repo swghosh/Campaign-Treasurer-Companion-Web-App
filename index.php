@@ -27,6 +27,6 @@
             <tr class="stock"><td class="name">Alibaba<br><small>E-Commerce</small></td><td class="current">$10.0</td><td class="difference"><span class="inverted triangle">&#9660;</span>$2.0</td><td class="percentage low">1.30%</td></tr>
         </table>
 <?php 
-    $scripts = array('tabselect.js');
+    $scripts = array('common.js');
     include('foot.php'); 
 ?>

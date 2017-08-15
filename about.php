@@ -1,4 +1,6 @@
-<?php include('head.php'); ?>
+<?php 
+    include('head.php');
+?>
         <table class="view">
             <tr class="sector"><td colspan="4" class="sector">Information</td></tr>
             
@@ -16,6 +18,6 @@
             <td colspan="4" class="sector copyright">© Campaign Treasurer, Prayas 17 Fest, Christ University.<br>Designed and Developed by <a href="https://github.com/swghosh" class="author">Swarup Ghosh</a>.</td>
         </table>
 <?php 
-    $scripts = array('tabselect.js', 'rulesandabout.js');
+    $scripts = array('common.js', 'rulesandabout.js');
     include('foot.php'); 
 ?>
