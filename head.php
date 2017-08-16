@@ -1,4 +1,5 @@
 <?php
+
     $current_script = $_SERVER['SCRIPT_NAME'];
     $pages = array(
         '/index.php' => array('Home', '🏠'),
@@ -28,7 +29,12 @@
                 <h1>
                     Campaign Treasurer Companion
                 </h1>
-                <small class="time">18/08/17 20:00:00</small>
+                <small class="time">
+                    <?php
+                        date_default_timezone_set('Asia/Kolkata');
+                        echo date('Y/m/d H:i:s')."\n";
+                    ?>
+                </small>
             </div>
             <div class="bottombar">
                 <ul class="tabs">
