@@ -5,5 +5,5 @@ var updateTime = function() {
         var smallTime = document.querySelector('small.time');
         smallTime.innerHTML = hiddenTimeDiv.innerHTML; 
     }
-});
+};
 updateTime();
