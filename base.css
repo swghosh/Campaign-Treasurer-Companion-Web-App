@@ -112,6 +112,9 @@ table.view tr.news {
     color: #000;
     background-color: #fff;
 }
+table.view tr.news#about, table.view tr.news#rules {
+    color: #666;
+}
 table.view td {
     padding-left: 1vw;
     padding-bottom: 2vh;
