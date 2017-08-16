@@ -1,3 +1,9 @@
+    <div class="hidden time">    
+    <?php
+        date_default_timezone_set('Asia/Kolkata');
+        echo date('Y/m/d H:i:s')."\n";
+    ?>
+    </div>
     <table class="view">
     <?php
         include_once('db.php');

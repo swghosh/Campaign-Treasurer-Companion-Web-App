@@ -190,6 +190,9 @@ span.not_inverted {
 span.inverted {
     color: red;
 }
+div.hidden.time {
+    display: none;
+}
 @media only screen and (min-width : 1200px) {
     div.bars {
         position: fixed;
