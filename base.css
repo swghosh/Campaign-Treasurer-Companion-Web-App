@@ -4,7 +4,7 @@
 body {
     margin: 0;
     font-family: 'Helvetica Neue';
-    font-weight: 300;
+    font-weight: 200;
     background-color: rgba(0, 0, 0, 0.15);
 }
 div.bars {
@@ -115,6 +115,10 @@ table.view tr.news {
 table.view tr.news#about, table.view tr.news#rules {
     color: #666;
 }
+table.view tr.profile {
+    background-color: #fff;
+    color: #000;
+}
 table.view td {
     padding-left: 1vw;
     padding-bottom: 2vh;
@@ -179,10 +183,34 @@ table.view td.high {
 table.view td.low {
     color: red;
 }
+table.view td.profile {
+    margin: 0;
+    padding: 5%;
+}
+table.view td.profile h1 {
+    font-family: 'Helvetica Neue';
+    text-transform: uppercase;
+    font-size: 1.4em;
+    font-weight: 200;
+    margin-bottom: 0;
+}
+table.view td.profile h3 {
+    color: #666;
+    text-transform: lowercase;
+    font-weight: 200;
+    margin-top: 0;
+}
+table.view td.profile p {
+    color: #056;
+    display: inline;
+}
+table.view td.profile b {
+    color: #678;
+    font-weight: 500;
+}
 span.triangle {
     margin: 0;
     padding: 0;
-    padding-right: 1vw;
 }
 span.not_inverted {
     color: green;
@@ -192,6 +220,14 @@ span.inverted {
 }
 div.hidden.time {
     display: none;
+}
+canvas.chart {
+    display: inline-block;
+    max-height: 300px;
+    max-width: 600px;
+    border: 0.1px solid rgba(255, 255, 255, 0.3);
+    padding: 1%;
+    margin: -2%;
 }
 @media only screen and (min-width : 1200px) {
     div.bars {
