@@ -95,6 +95,7 @@ table.view {
     margin-right: 0;
     padding: 0;
     overflow: auto;
+    table-layout: fixed;
 }
 table.view tr {
     padding: 0;
@@ -186,6 +187,7 @@ table.view td.low {
 table.view td.profile {
     margin: 0;
     padding: 5%;
+    word-wrap: break-word;
 }
 table.view td.profile h1 {
     font-family: 'Helvetica Neue';
@@ -202,7 +204,6 @@ table.view td.profile h3 {
 }
 table.view td.profile p {
     color: #056;
-    display: inline;
 }
 table.view td.profile b {
     color: #678;
