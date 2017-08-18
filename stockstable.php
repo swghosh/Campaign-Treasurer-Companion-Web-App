@@ -50,10 +50,10 @@
                 $difference = -$difference;
                 $percentage = -$percentage;
 
-                $str = '<tr class="stock"><td class="name">'.$name.'<br><small>'.$sector.'</small></td><td class="current">$'.$current.'</td><td class="difference"><span class="not_inverted triangle">&#9650;</span>$'.$difference.'</td><td class="percentage high">'.$percentage.'%</td></tr>';
+                $str = '<tr class="stock"><td class="name">'.$name.'<br><small>'.$sector.'</small></td><td class="current">$'.$current.'</td><td class="difference"><span class="not_inverted triangle">&#9650;</span> $'.$difference.'</td><td class="percentage high">'.$percentage.'%</td></tr>';
             }
             else {
-                $str = '<tr class="stock"><td class="name">'.$name.'<br><small>'.$sector.'</small></td><td class="current">$'.$current.'</td><td class="difference"><span class="inverted triangle">&#9660;</span>$'.$difference.'</td><td class="percentage low">'.$percentage.'%</td></tr>';
+                $str = '<tr class="stock"><td class="name">'.$name.'<br><small>'.$sector.'</small></td><td class="current">$'.$current.'</td><td class="difference"><span class="inverted triangle">&#9660;</span> $'.$difference.'</td><td class="percentage low">'.$percentage.'%</td></tr>';
             }
 
             echo $str."\n";
