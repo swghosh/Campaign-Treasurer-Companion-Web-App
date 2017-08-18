@@ -1,7 +1,7 @@
 <?php 
     include('head.php'); 
 ?>
-        <table class="view">
+        <table class="view" id="details">
             <tr class="sector"><td class="sector">Securities</td></tr>
             <tr class="profile">
                 <td class="profile">
