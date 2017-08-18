@@ -19,7 +19,7 @@
         while($ar = mysqli_fetch_array($res)) {
             $name = $ar['name'];
             $current = $ar['current'];
-            $str = '<tr class="stock" id="'.$name.'" onclick="document.link = \'/details.php#'.$name.'\'"><td class="name">'.$name.'</td><td class="current" colspan="3">$'.$current.'</td></tr>';
+            $str = '<tr class="stock" id="'.$name.'" onclick="document.location = \'/details.php#'.$name.'\'"><td class="name">'.$name.'</td><td class="current" colspan="3">$'.$current.'</td></tr>';
             echo $str."\n";
         }
     ?>
@@ -30,7 +30,7 @@
         while($ar = mysqli_fetch_array($res)) {
             $name = $ar['name'];
             $current = $ar['current'];
-            $str = '<tr class="stock" id="'.$name.'" onclick="document.link = \'/details.php#'.$name.'\'"><td class="name">'.$name.'</td><td class="current" colspan="3">$'.$current.'</td></tr>';
+            $str = '<tr class="stock" id="'.$name.'" onclick="document.location = \'/details.php#'.$name.'\'"><td class="name">'.$name.'</td><td class="current" colspan="3">$'.$current.'</td></tr>';
             echo $str."\n";
         }
     ?>
@@ -50,10 +50,10 @@
                 $difference = -$difference;
                 $percentage = -$percentage;
 
-                $str = '<tr class="stock" id="'.$name.'" onclick="document.link = \'/details.php#'.$name.'\'"><td class="name">'.$name.'<br><small>'.$sector.'</small></td><td class="current">$'.$current.'</td><td class="difference"><span class="not_inverted triangle">&#9650;</span> $'.$difference.'</td><td class="percentage high">'.$percentage.'%</td></tr>';
+                $str = '<tr class="stock" id="'.$name.'" onclick="document.location = \'/details.php#'.$name.'\'"><td class="name">'.$name.'<br><small>'.$sector.'</small></td><td class="current">$'.$current.'</td><td class="difference"><span class="not_inverted triangle">&#9650;</span> $'.$difference.'</td><td class="percentage high">'.$percentage.'%</td></tr>';
             }
             else {
-                $str = '<tr class="stock" id="'.$name.'" onclick="document.link = \'/details.php#'.$name.'\'"><td class="name">'.$name.'<br><small>'.$sector.'</small></td><td class="current">$'.$current.'</td><td class="difference"><span class="inverted triangle">&#9660;</span> $'.$difference.'</td><td class="percentage low">'.$percentage.'%</td></tr>';
+                $str = '<tr class="stock" id="'.$name.'" onclick="document.location = \'/details.php#'.$name.'\'"><td class="name">'.$name.'<br><small>'.$sector.'</small></td><td class="current">$'.$current.'</td><td class="difference"><span class="inverted triangle">&#9660;</span> $'.$difference.'</td><td class="percentage low">'.$percentage.'%</td></tr>';
             }
 
             echo $str."\n";
