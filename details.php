@@ -3,7 +3,7 @@
 ?>
         <table class="view" id="details">
             <tr class="sector"><td class="sector">Securities</td></tr>
-            <tr class="profile">
+            <tr class="profile" id="Amazon">
                 <td class="profile">
                     <h1>
                         Amazon <b>($176, <span class="not_inverted triangle">&#9650;</span>$64, 57%)</b>
