@@ -2,11 +2,11 @@
     include('head.php'); 
 ?>
         <table class="view">
-            <tr class="sector"><td colspan="4" class="sector">Cryptocurrency</td></tr>
+            <tr class="sector"><td colspan="4" class="sector">Cryptocurrencies</td></tr>
             <tr class="stock"><td class="name">Bitcoin</td><td class="current" colspan="3">$10.0</td></tr>
             <tr class="stock"><td class="name">Ripple</td><td class="current" colspan="3">$10.0</td></tr>
             <tr class="stock"><td class="name">Ether</td><td class="current" colspan="3">$10.0</td></tr>
-            <tr class="sector"><td colspan="4" class="sector">Commodity</td></tr>
+            <tr class="sector"><td colspan="4" class="sector">Commodities</td></tr>
             <tr class="stock"><td class="name">Gold</td><td class="current" colspan="3">$10.0</td></tr>
             <tr class="stock"><td class="name">Silver</td><td class="current" colspan="3">$10.0</td></tr>
             <tr class="stock"><td class="name">Crude Oil</td><td class="current" colspan="3">$10.0</td></tr>
