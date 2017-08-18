@@ -19,7 +19,7 @@
                     <br>
                     Previous Close: <b>$112</b>
                     <br>
-                    Open Value: <b>$19</b>
+                    Open Value: <b>$119</b>
                     <br>
                     Upper Circuit: <b>$300</b>
                     <br>
