@@ -36,7 +36,6 @@
     ?>
             
             <tr class="sector"><td colspan="4" class="sector">Securities</td></tr>
-            <tr class="stock"><td class="name">Apple<br><small>Technology</small></td><td class="current">$10.0</td><td class="difference"><span class="not_inverted triangle">&#9650;</span>$2.0</td><td class="percentage high">1.30%</td></tr>
     <?php
         $res = mysqli_query($db, $sql_commodities);
         while($ar = mysqli_fetch_array($res)) {
