@@ -37,7 +37,7 @@
             
             <tr class="sector"><td colspan="4" class="sector">Securities</td></tr>
     <?php
-        $res = mysqli_query($db, $sql_commodities);
+        $res = mysqli_query($db, $sql_stocks);
         while($ar = mysqli_fetch_array($res)) {
             $name = $ar['name'];
             $sector = $ar['sector'];
