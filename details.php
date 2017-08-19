@@ -177,7 +177,7 @@
 
             echo $str."\n";
 
-            $sql_updates = "SELECT name, current FROM updates WHERE name = '".$name."' ORDER BY time;";
+            $sql_updates = "SELECT time, current FROM updates WHERE name = '".$name."' ORDER BY time;";
             $res_updates = mysqli_query($db, $sql_updates);
 
             $updates_time = array();
@@ -201,6 +201,6 @@
     ?>
     </table>
 <?php 
-    $scripts = array('common.js', '//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js', 'chartjsinit.js', 'chartingsample.js');
+    $scripts = array('common.js', '//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js', 'chartjsinit.js', 'generateallcharts.js');
     include('foot.php'); 
 ?>
