@@ -177,7 +177,7 @@
 
             echo $str."\n";
 
-            $sql_updates = "SELECT name, current FROM stocks WHERE name = '".$name."' ORDER BY time;";
+            $sql_updates = "SELECT name, current FROM updates WHERE name = '".$name."' ORDER BY time;";
             $res_updates = mysqli_query($db, $sql_updates);
 
             $updates_time = array();
@@ -185,7 +185,7 @@
 
             while($u = mysqli_fetch_array($res_updates)) {
                 $t = $u['time'];
-                $c = $u['current'];
+                $c = intval($u['current']);
 
                 $updates_time[] = $t;
                 $updates_values[] = $c;
