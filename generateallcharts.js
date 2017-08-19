@@ -4,4 +4,9 @@ for(var key in updates) {
     var values = item.values;
     
     chartGenerate(key, times, values);
+    var lowestBlock = document.getElementById(key).querySelector('b.lowest');
+    var highestBlock = document.getElementById(key).querySelector('b.higest');
+
+    lowestBlock.innerHTML = '$' + item.lowest;
+    highestBlock.innerHTML = '$' + item.highest;
 }
