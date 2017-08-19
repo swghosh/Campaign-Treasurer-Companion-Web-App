@@ -157,7 +157,7 @@
                 $difference = -$difference;
                 $percentage = -$percentage;
 
-                $str = "<tr class=\"profile\" id=\"\">
+                $str = "<tr class=\"profile\" id=\"$name\">
                     <td class=\"profile\">
                         <h1>
                             $name <b>($$current, <span class=\"not_inverted triangle\">&#9650;</span>$$difference, $percentage%)</b>
@@ -189,7 +189,7 @@
                 </tr>";
             }
             else {
-                $str = "<tr class=\"profile\" id=\"\">
+                $str = "<tr class=\"profile\" id=\"$name\">
                     <td class=\"profile\">
                         <h1>
                             $name <b>($$current, <span class=\"inverted triangle\">&#9660;</span>$$difference, $percentage%)</b>
