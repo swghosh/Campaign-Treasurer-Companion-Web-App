@@ -16,7 +16,7 @@
         while($ar = mysqli_fetch_array($res)) {
             $name = $ar['name'];
             $current = $ar['current'];
-            $description = $ar['description'];
+            $description = mysqli_real_escape_string($db, $ar['description']);
             $ovalue = $ar['ovalue'];
 
             $str = "<tr class=\"profile\" id=\"$name\">
