@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Restricted Content, Master Panel"
+AuthUserFile /var/www/html/masterpanel/.htpasswd
+Require valid-user
