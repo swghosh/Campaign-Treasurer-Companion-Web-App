@@ -47,6 +47,29 @@
             </td>
         </tr>";
             echo $str."\n";
+            
+            $sql_updates = "SELECT time, current FROM updates WHERE name = '".$name."' ORDER BY time;";
+            $res_updates = mysqli_query($db, $sql_updates);
+
+            $updates_time = array();
+            $updates_values = array();
+
+            while($u = mysqli_fetch_array($res_updates)) {
+                $t = $u['time'];
+                $c = intval($u['current']);
+
+                $updates_time[] = $t;
+                $updates_values[] = $c;
+            }
+
+            $jsobj = array(
+                'times' => $updates_time,
+                'values' => $updates_values,
+                'highest' => max($updates_values),
+                'lowest' => min($updates_values)
+            );
+
+            echo '<script>updates["'.$name.'"] = '.json_encode($jsobj).';</script>';
         }
     ?>
 
@@ -88,6 +111,29 @@
             </td>
         </tr>";
             echo $str."\n";
+            
+            $sql_updates = "SELECT time, current FROM updates WHERE name = '".$name."' ORDER BY time;";
+            $res_updates = mysqli_query($db, $sql_updates);
+
+            $updates_time = array();
+            $updates_values = array();
+
+            while($u = mysqli_fetch_array($res_updates)) {
+                $t = $u['time'];
+                $c = intval($u['current']);
+
+                $updates_time[] = $t;
+                $updates_values[] = $c;
+            }
+
+            $jsobj = array(
+                'times' => $updates_time,
+                'values' => $updates_values,
+                'highest' => max($updates_values),
+                'lowest' => min($updates_values)
+            );
+
+            echo '<script>updates["'.$name.'"] = '.json_encode($jsobj).';</script>';
         }
     ?>
             
@@ -193,7 +239,9 @@
 
             $jsobj = array(
                 'times' => $updates_time,
-                'values' => $updates_values      
+                'values' => $updates_values,
+                'highest' => max($updates_values),
+                'lowest' => min($updates_values)
             );
 
             echo '<script>updates["'.$name.'"] = '.json_encode($jsobj).';</script>';
