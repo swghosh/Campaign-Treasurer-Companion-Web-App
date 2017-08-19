@@ -36,9 +36,9 @@
                 <canvas id=\"chart $name\" class=\"chart\"></canvas>
                 <br>
                 <br>
-                Highest Value: <b>$</b>
+                Highest Value: <b class=\"highest\">$</b>
                 <br>
-                Lowest Value: <b>$</b>
+                Lowest Value: <b class=\"lowest\">$</b>
             </td>
         </tr>";
             echo $str."\n";
@@ -77,9 +77,9 @@
                 <canvas id=\"chart $name\" class=\"chart\"></canvas>
                 <br>
                 <br>
-                Highest Value: <b>$</b>
+                Highest Value: <b class=\"highest\">$</b>
                 <br>
-                Lowest Value: <b>$</b>
+                Lowest Value: <b class=\"lowest\">$</b>
             </td>
         </tr>";
             echo $str."\n";
@@ -131,9 +131,9 @@
                         <canvas id=\"chart $name\" class=\"chart\"></canvas>
                         <br>
                         <br>
-                        Highest Value: <b>$</b>
+                        Highest Value: <b class=\"highest\">$</b>
                         <br>
-                        Lowest Value: <b>$</b>
+                        Lowest Value: <b class=\"lowest\">$</b>
                     </td>
                 </tr>";
             }
@@ -163,14 +163,16 @@
                         <canvas id=\"chart $name\" class=\"chart\"></canvas>
                         <br>
                         <br>
-                        Highest Value: <b>$</b>
+                        Highest Value: <b class=\"highest\">$</b>
                         <br>
-                        Lowest Value: <b>$</b>
+                        Lowest Value: <b class=\"lowest\">$</b>
                     </td>
                 </tr>";
             }
 
             echo $str."\n";
+
+            $sql_updates = "SELECT name, current FROM stocks WHERE name = " 
         }
     ?>
     </table>
