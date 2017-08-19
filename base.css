@@ -220,7 +220,7 @@ span.not_inverted {
 span.inverted {
     color: red;
 }
-div.hidden.time {
+div.hidden {
     display: none;
 }
 canvas.chart {

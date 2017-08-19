@@ -9,48 +9,51 @@ var loadStocksInit = function(uri) {
         if (this.readyState == 4 && this.status == 200) {
             putInDataDiv(this.responseText);
             this.abort();
+
+            updateTime();
         }
     };
     xhttp.open("GET", uri, true);
     xhttp.send();
 }
 
-// var populateStocksInit = function() {
-//     loadStocksInit("stocktable.php");
-// };
+var populateStocksInit = function() {
+    loadStocksInit("stockstable.php");
+};
 
 var populateNews = function() {
     loadStocksInit("newstable.php");
-    updateTime();
 };
 
-// var loadStocksLater = function(uri) {
-//     var xhttp = new XMLHttpRequest();
-//     xhttp.onreadystatechange = function() {
-//         if (this.readyState == 4 && this.status == 200) {
-//             var ds = document.querySelector('div#stocks');
-//             var dh = document.querySelector('div#hidden');
-//             dh.innerHTML = ds.innerHTML;
-//             ds.innerHTML = this.responseText;
-//             ds.id = "shown";
-//             var dstrs = document.querySelectorAll("div#shown table tr");
-//             var dhtrs = document.querySelectorAll("div#hidden table tr");
-//             if(dstrs.length == dhtrs.length) {
-//                 for(var i = 0; i < dstrs.length; i++) {
-//                     if(dstrs[i].innerHTML !== dhtrs[i].innerHTML) {
-//                         dstrs[i].style.backgroundColor = 'yellow';
-//                         dstrs[i].style.color = '#000';
-//                     }
-//                 }
-//             }
-//             ds.id = "stocks";
-//             this.abort();
-//         }
-//     };
-//     xhttp.open("GET", uri, true);
-//     xhttp.send();
-// };
+var loadStocksLater = function(uri) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var ds = document.querySelector('div#data');
+            var dh = document.querySelector('div#hidden');
+            dh.innerHTML = ds.innerHTML;
+            ds.innerHTML = this.responseText;
+            ds.id = "shown";
+            var dstrs = document.querySelectorAll("div#shown table tr");
+            var dhtrs = document.querySelectorAll("div#hidden table tr");
+            if(dstrs.length == dhtrs.length) {
+                for(var i = 0; i < dstrs.length; i++) {
+                    if(dstrs[i].innerHTML !== dhtrs[i].innerHTML) {
+                        dstrs[i].style.backgroundColor = 'yellow';
+                        dstrs[i].style.color = '#000';
+                    }
+                }
+            }
+            ds.id = "data";
+            this.abort();
 
-// var populateStocksLater = function() {
-//     loadStocksLater('stocktable.php');
-// };
+            updateTime();
+        }
+    };
+    xhttp.open("GET", uri, true);
+    xhttp.send();
+};
+
+var populateStocksLater = function() {
+    loadStocksLater("stockstable.php");
+};
