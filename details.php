@@ -231,7 +231,7 @@
 
             while($u = mysqli_fetch_array($res_updates)) {
                 $t = $u['time'];
-                $c = intval($u['current']);
+                $c = floatval($u['current']);
 
                 $updates_time[] = $t;
                 $updates_values[] = $c;
