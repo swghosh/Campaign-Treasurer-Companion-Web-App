@@ -1,6 +1,11 @@
 <?php 
     include('head.php'); 
 ?>
+    <script>
+        var updates = {
+
+        };
+    </script>
     <table class="view" id="details">
     <?php
         include_once('db.php');
@@ -172,7 +177,26 @@
 
             echo $str."\n";
 
-            $sql_updates = "SELECT name, current FROM stocks WHERE name = " 
+            $sql_updates = "SELECT name, current FROM stocks WHERE name = '".$name."' ORDER BY time;";
+            $res_updates = mysqli_query($db, $sql_updates);
+
+            $updates_time = array();
+            $updates_values = array();
+
+            while($u = mysqli_fetch_array($res_updates)) {
+                $t = $u['time'];
+                $c = $u['current'];
+
+                $updates_time[] = $t;
+                $updates_values[] = $c;
+            }
+
+            $jsobj = array(
+                'times' => $updates_time,
+                'values' => $updates_values      
+            );
+
+            echo '<script>updates["'.$name.'"] = '.json_encode($jsobj).';</script>';
         }
     ?>
     </table>
