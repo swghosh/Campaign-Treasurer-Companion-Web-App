@@ -16,7 +16,7 @@ div.topbar {
     position: fixed;
     margin: 0;
     top: 0;
-    width: 100%;
+    width: 100vw;
     background-color: rgba(50, 110, 130, 0.99);
     text-align: center;
     box-shadow: 0 0 7px #046;

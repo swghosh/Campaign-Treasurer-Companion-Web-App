@@ -15,7 +15,7 @@
             <tr class="stock" onclick="document.location = 'https://github.com/swghosh/Campaign-Treasurer-Companion-Web-App/blob/master/LICENSE.MD';"><td class="name">License <span class="arrow">&#8599;</span></td></tr>
             <tr class="stock" onclick="document.location = 'https://github.com/swghosh/Campaign-Treasurer-Companion-Web-App';"><td class="name">Open-source Project on GitHub <span class="arrow">&#8599;</span></td></tr>
             
-            <td colspan="4" class="sector copyright">© Campaign Treasurer, Prayas 17 Fest, Christ University.<br>Designed and Developed by <a href="https://github.com/swghosh" class="author">Swarup Ghosh</a>.</td>
+            <tr class="sector"><td colspan="4" class="sector copyright">© Campaign Treasurer, Prayas 17 Fest, Christ University.<br>Designed and Developed by <a href="https://github.com/swghosh" class="author">Swarup Ghosh</a>.</td></tr>
         </table>
 <?php 
     $scripts = array('common.js', 'rulesandabout.js');
