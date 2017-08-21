@@ -5,7 +5,12 @@
             <tr class="sector"><td colspan="4" class="sector">News Updates</td></tr>
             <tr class="stock" id="addnews"><td class="name">Add News Item <span id="addnews" class="arrow">⌵</span></td></tr>
             <tr class="news" id="addnews"><td class="time"></td><td class="news">
-                <form>This place will be replaced with a form.</form>
+                <form method="POST" action="addnews.php">
+                    <textarea name="content" placeholder="content of news"></textarea><br>
+                    <br>
+                    <i>current time will be used for the news update.</i><br>
+                    <input type="submit" value="Post News" />
+                </form>
                 <br><br>
             </td></tr>
             <tr class="stock" onclick="document.location = 'rollbacknews';"><td class="name"><a href="rollbacknews" class="link">Rollback News Item  <span class="arrow ext">⎋</span></a></td></tr>
@@ -13,17 +18,43 @@
             <tr class="sector"><td colspan="4" class="sector">Cryptocurrencies, Comodities, Securities</td></tr>
             <tr class="stock" id="addstock"><td class="name">Add New Cryptocurrency / Commodity / Security <span id="addstock" class="arrow">⌵</span></td></tr>
             <tr class="news" id="addstock"><td class="time"></td><td class="news">
-                <form>This place will be replaced with a form.</form>
+                <form method="POST" action="addstock.php">
+                Commodities, cryptocurrencies do not have a sector name, previous close.<br>Cryptocurrencies do not have lower circuit, upper circuit.<br><br>
+                    <select name="type">
+                        <option value="stock">Security</option>
+                        <option value="cryptocurrency">Cryptocurrency</option>
+                        <option value="commodity">Commodity</option>
+                    </select><br><br>
+                    <input type="text" name="name" placeholder="name" /><br><br>
+                    <input type="text" name="sector" placeholder="sector" /><br><br>
+                    $ <input type="number" name="pclose" placeholder="previous close" /><br><br>
+                    $ <input type="number" name="ovalue" placeholder="open value" /><br><br>
+                    $ <input type="number" name="lcircuit" placeholder="lower circuit" /><br><br>
+                    $ <input type="number" name="ucircuit" placeholder="upper circuit" /><br><br>
+                    <textarea name="description" placeholder="description"></textarea><br><br>
+                    <input type="submit" value="Add Security / Commodity / Cryptocurrency" />
+                </form>
                 <br><br>
             </td></tr>
             <tr class="stock" id="removestock"><td class="name">Remove Existing Cryptocurrency / Commodity / Security <span id="removestock" class="arrow">⌵</span></td></tr>
             <tr class="news" id="removestock"><td class="time"></td><td class="news">
-                <form>This place will be replaced with a form.</form>
+                <form method="POST" action="removestock.php">
+                    <select name="item">
+                        <option value="">Amazon</option>
+                    </select><br><br>
+                    <input type="submit" value="Remove" />
+                </form>
                 <br><br>
             </td></tr>
             <tr class="stock" id="updateprice"><td class="name">Introduce Price Update to Cryptocurrency / Commodity / Security <span id="updateprice" class="arrow">⌵</span></td></tr>
             <tr class="news" id="updateprice"><td class="time"></td><td class="news">
-                <form>This place will be replaced with a form.</form>
+                <form method="POST" action="updateprice.php">
+                    <select name="item">
+                        <option value="">Amazon</option>
+                    </select><br><br>
+                    $ <input type="number" name="current" placeholder="new price" /><br>
+                    <input type="submit" value="Update Price" />
+                </form>
                 <br><br>
             </td></tr>
             <tr class="stock" onclick="document.location = 'rollbackprice';"><td class="name"><a href="rollbackprice" class="link">Rollback Price Update for Cryptocurrency / Commodity / Security  <span class="arrow ext">⎋</span></a></td></tr>
@@ -34,18 +65,33 @@
             <tr class="sector"><td colspan="4" class="sector">Trade</td></tr>
             <tr class="stock" id="reversetransaction"><td class="name">Reverse a Transaction <span id="reversetransaction" class="arrow">⌵</span></td></tr>
             <tr class="news" id="reversetransaction"><td class="time"></td><td class="news">
-                <form>This place will be replaced with a form.</form>
+                <form method="POST" action="reversetransaction.php">
+                    id <input type="number" name="id" placeholder="transaction" /><br>
+                    <input type="submit" value="Reverse Transaction" />
+                </form>
                 <br><br>
             </td></tr>
             <tr class="stock" onclick="document.location = 'activebuyers';"><td class="name"><a href="activebuyers" class="link">Show Active Buyers  <span class="arrow ext">⎋</span></a></td></tr>
             <tr class="stock" id="grantfunds"><td class="name">Grant Funds <span id="grantfunds" class="arrow">⌵</span></td></tr>
             <tr class="news" id="grantfunds"><td class="time"></td><td class="news">
-                <form>This place will be replaced with a form.</form>
+                <form method="POST" action="grantfunds.php">
+                    <select name="item">
+                        <option value="">userA</option>
+                    </select><br><br>
+                    $ <input type="number" name="current" placeholder="amount" /><br>
+                    <input type="submit" value="Grant Fund" />
+                </form>
                 <br><br>
             </td></tr>
             <tr class="stock" id="deductfunds"><td class="name">Deduct Funds <span id="deductfunds" class="arrow">⌵</span></td></tr>
             <tr class="news" id="deductfunds"><td class="time"></td><td class="news">
-                <form>This place will be replaced with a form.</form>
+                <form method="POST" action="deductfunds.php">
+                    <select name="item">
+                        <option value="">userA</option>
+                    </select><br><br>
+                    $ <input type="number" name="current" placeholder="amount" /><br>
+                    <input type="submit" value="Deduct Fund" />
+                </form>
                 <br><br>
             </td></tr>
             

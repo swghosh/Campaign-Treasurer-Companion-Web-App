@@ -242,6 +242,48 @@ a.link {
 a.link:hover {
     color: #09f;
 }
+textarea, input[type=text], input[type=number] {
+    border: none;
+    outline: none;
+    border-bottom: 2px solid rgba(0, 0, 100, 0.4);
+    font-family: 'Helvetica Neue';
+    font-weight: 200;
+    font-size: 2em;
+    width: 80%;
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+}
+input[type=number] {
+    width: 35%;
+}
+input[type=submit] {
+    border: none;
+    padding: 1%;
+    font-family: 'Helvetica Neue';
+    font-weight: 200;
+    font-size: 1.2em;
+    border-radius: 5%;
+    margin: 2%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+input[type=submit]:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+select {
+    border: none;
+    border-bottom: 2px solid rgba(0, 0, 100, 0.6);
+    outline: none;
+    font-family: 'Helvetica Neue';
+    font-weight: 200;
+    font-size: 1.2em;
+    background-color: rgba(0, 0, 0, 0);
+    text-align: center;
+    width: 30%;
+    padding: 10%;
+    color: #222;
+}
+
 @media only screen and (min-width : 1200px) {
     div.bars {
         position: fixed;
