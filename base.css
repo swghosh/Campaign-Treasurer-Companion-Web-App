@@ -142,7 +142,7 @@ table.view td.copyright {
 table.view span.arrow {
     display: inline-block;
     margin-left: 0.5%;
-    z-index: -1;
+    z-index: 1;
 }
 table.view span.ext {
     transform: rotate(90deg);
