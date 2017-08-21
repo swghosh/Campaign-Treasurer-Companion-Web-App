@@ -10,6 +10,7 @@ body {
 div.bars {
     margin: 0;
     padding: 0;
+    z-index: 1000;
 }
 div.topbar {
     font-size: 0.9em;
@@ -141,7 +142,7 @@ table.view td.copyright {
 table.view span.arrow {
     display: inline-block;
     margin-left: 0.5%;
-    z-index: -10;
+    z-index: -1;
 }
 table.view span.ext {
     transform: rotate(90deg);
@@ -237,6 +238,9 @@ canvas.chart {
 a.link {
     text-decoration: none;
     color: inherit;
+}
+a.link:hover {
+    color: #09f;
 }
 @media only screen and (min-width : 1200px) {
     div.bars {
