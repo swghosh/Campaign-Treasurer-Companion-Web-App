@@ -143,6 +143,9 @@ table.view span.arrow {
     margin-left: 0.5%;
     z-index: -10;
 }
+table.view span.ext {
+    transform: rotate(90deg);
+}
 a.author {
     color: inherit;
     text-decoration: underline;
@@ -230,6 +233,10 @@ canvas.chart {
     border: 0.1px solid rgba(255, 255, 255, 0.3);
     padding: 1%;
     margin: -2%;
+}
+a.link {
+    text-decoration: none;
+    color: inherit;
 }
 @media only screen and (min-width : 1200px) {
     div.bars {

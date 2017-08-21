@@ -1,0 +1,17 @@
+/* adjustments in table.view to allow viewing in a single view as on a large screen */
+table.view {
+    text-align: center;
+}
+table.view tr.sector {
+    display: none;
+}
+table.view tr {
+    padding: 0;
+    display: inline-block;
+    width: 32vw;
+    margin-left: 5vw;
+    margin: 0.5vw;
+}
+table.view td {
+    display: inline-block;
+}
