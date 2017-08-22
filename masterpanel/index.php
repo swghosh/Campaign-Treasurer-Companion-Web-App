@@ -53,10 +53,10 @@
                     </select><br><br>
                     <input type="text" name="name" placeholder="name" /><br><br>
                     <input type="text" name="sector" placeholder="sector" /><br><br>
-                    <label for="pclose">previous close $</label> <input type="number" name="pclose" placeholder="previous close" /><br><br>
-                    <label for="ovalue">open value $</label> <input type="number" name="ovalue" placeholder="open value" /><br><br>
-                    <label for="lcircuit">lower circuit $</label> <input type="number" name="lcircuit" placeholder="lower circuit" /><br><br>
-                    <label for="ucircuit">upper circuit $</label> <input type="number" name="ucircuit" placeholder="upper circuit" /><br><br>
+                    <label for="pclose">previous close $</label> <input type="number" step="any" name="pclose" placeholder="previous close" /><br><br>
+                    <label for="ovalue">open value $</label> <input type="number" step="any" name="ovalue" placeholder="open value" /><br><br>
+                    <label for="lcircuit">lower circuit $</label> <input type="number" step="any" name="lcircuit" placeholder="lower circuit" /><br><br>
+                    <label for="ucircuit">upper circuit $</label> <input type="number" step="any" name="ucircuit" placeholder="upper circuit" /><br><br>
                     <textarea name="description" placeholder="description"></textarea><br><br>
                     <input type="submit" value="Add Listing" />
                 </form>
@@ -86,7 +86,7 @@
                             }
                         ?>
                     </select><br><br>
-                    $ <input type="number" name="current" placeholder="new price" /><br>
+                    $ <input type="number" step="any" name="current" placeholder="new price" /><br>
                     <input type="submit" value="Update Price" />
                 </form>
                 <br><br>
@@ -100,7 +100,7 @@
             <tr class="stock" id="reversetransaction"><td class="name">Reverse a Transaction <span id="reversetransaction" class="arrow">⌵</span></td></tr>
             <tr class="news" id="reversetransaction"><td class="time"></td><td class="news">
                 <form method="POST" action="reversetransaction.php">
-                    transaction <input type="number" name="id" placeholder="id" /><br>
+                    transaction <input type="number" step="any" name="id" placeholder="id" /><br>
                     <input type="submit" value="Reverse Transaction" />
                 </form>
                 <br><br>
@@ -112,7 +112,7 @@
                     <select name="user">
                         <option value="">userA</option>
                     </select><br><br>
-                    $ <input type="number" name="current" placeholder="amount" /><br>
+                    $ <input type="number" step="any" name="current" placeholder="amount" /><br>
                     <input type="text" name="note" placeholder="note" /><br>
                     <input type="submit" value="Grant Fund" />
                 </form>
@@ -124,7 +124,7 @@
                     <select name="user">
                         <option value="">userA</option>
                     </select><br><br>
-                    $ <input type="number" name="current" placeholder="amount" /><br>
+                    $ <input type="number" step="any" name="current" placeholder="amount" /><br>
                     <input type="text" name="note" placeholder="note" /><br>
                     <input type="submit" value="Deduct Fund" />
                 </form>
