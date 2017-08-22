@@ -8,7 +8,6 @@
 </div>
 <div id="hidden" class="hidden">
 </div>
-<link href="lsv.css" rel="stylesheet" type="text/css" />
 <style>
     <?php include('lsv.css'); ?>
 </style>

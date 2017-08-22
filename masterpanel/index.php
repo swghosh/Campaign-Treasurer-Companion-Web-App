@@ -24,7 +24,10 @@
         $names[] = $ar['name'];
     }
 ?>
-        <table class="view">
+        <table class="view" id="panel">
+            <tr class="sector"><td colspan="4" class="sector">Home</td></tr>
+            <tr class="stock" onclick="document.location = '/';"><td class="name"><a href="/" class="link">Campaign Treasurer Companion Home <span class="arrow ext">⎋</span></a></td></tr>
+
             <tr class="sector"><td colspan="4" class="sector">News Updates</td></tr>
             <tr class="stock" id="addnews"><td class="name">Add News Item <span id="addnews" class="arrow">⌵</span></td></tr>
             <tr class="news" id="addnews"><td class="time"></td><td class="news">
@@ -36,7 +39,7 @@
                 </form>
                 <br><br>
             </td></tr>
-            <tr class="stock" onclick="document.location = 'rollbacknews';"><td class="name"><a href="rollbacknews" class="link">Rollback News Item  <span class="arrow ext">⎋</span></a></td></tr>
+            <tr class="stock" onclick="document.location = 'rollbacknews';"><td class="name"><a href="rollbacknews" class="link">Rollback News Item <span class="arrow ext">⎋</span></a></td></tr>
 
             <tr class="sector"><td colspan="4" class="sector">Cryptocurrencies, Comodities, Securities</td></tr>
             <tr class="stock" id="addstock"><td class="name">Add New Cryptocurrency / Commodity / Security <span id="addstock" class="arrow">⌵</span></td></tr>
@@ -88,10 +91,10 @@
                 </form>
                 <br><br>
             </td></tr>
-            <tr class="stock" onclick="document.location = 'rollbackprice';"><td class="name"><a href="rollbackprice" class="link">Rollback Price Update for Cryptocurrency / Commodity / Security  <span class="arrow ext">⎋</span></a></td></tr>
+            <tr class="stock" onclick="document.location = 'rollbackprice';"><td class="name"><a href="rollbackprice" class="link">Rollback Price Update for Cryptocurrency / Commodity / Security <span class="arrow ext">⎋</span></a></td></tr>
 
             <tr class="sector"><td colspan="4" class="sector">Larger Display</td></tr>
-            <tr class="stock" onclick="document.location = 'largescreenview.php';"><td class="name"><a href="largescreenview.php" class="link">Show Market Overview  <span class="arrow ext">⎋</span></a></td></tr>
+            <tr class="stock" onclick="document.location = 'largescreenview.php';"><td class="name"><a href="largescreenview.php" class="link">Show Market Overview <span class="arrow ext">⎋</span></a></td></tr>
 
             <tr class="sector"><td colspan="4" class="sector">Trade</td></tr>
             <tr class="stock" id="reversetransaction"><td class="name">Reverse a Transaction <span id="reversetransaction" class="arrow">⌵</span></td></tr>
@@ -102,7 +105,7 @@
                 </form>
                 <br><br>
             </td></tr>
-            <tr class="stock" onclick="document.location = 'activebuyers';"><td class="name"><a href="activebuyers" class="link">Show Active Buyers  <span class="arrow ext">⎋</span></a></td></tr>
+            <tr class="stock" onclick="document.location = 'activebuyers';"><td class="name"><a href="activebuyers" class="link">Show Active Buyers <span class="arrow ext">⎋</span></a></td></tr>
             <tr class="stock" id="grantfunds"><td class="name">Grant Funds <span id="grantfunds" class="arrow">⌵</span></td></tr>
             <tr class="news" id="grantfunds"><td class="time"></td><td class="news">
                 <form method="POST" action="grantfunds.php">

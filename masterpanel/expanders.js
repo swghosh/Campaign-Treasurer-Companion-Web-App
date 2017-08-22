@@ -20,7 +20,7 @@ for(var index = 0; index < ids.length; index++) {
         var id = this.id;
         if(flags[id] == false) {
             spans[id].style.transform = 'rotateX(180deg)';
-            items[id].style.display = 'table-row';
+            items[id].style.display = 'block';
             expandables[id].style.color = '#09f';
             flags[id] = true;
         }

@@ -100,6 +100,9 @@ table.view {
 table.view#details {
     table-layout: fixed;
 }
+table.view#panel {
+    padding: 2%;
+}
 table.view tr {
     padding: 0;
     margin: 0;
@@ -115,6 +118,11 @@ table.view tr.stock {
 table.view tr.news {
     color: #000;
     background-color: #fff;
+}
+table.view#panel tr.news {
+    display: block;
+    margin: 2%;
+    margin-top: 0;
 }
 table.view tr.news#about, table.view tr.news#rules {
     color: #666;
@@ -257,6 +265,7 @@ input[type=number] {
     width: 35%;
 }
 input[type=submit] {
+    padding: 2vh;
     border: none;
     font-family: 'Helvetica Neue';
     font-weight: 200;
