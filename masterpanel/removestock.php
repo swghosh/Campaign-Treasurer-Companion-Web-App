@@ -18,8 +18,9 @@ $name = mysqli_real_escape_string($db, htmlspecialchars($_POST['item']));
 $sql1 = "DELETE FROM stocks WHERE name = '".$name."';";
 $sql2 = "DELETE FROM commodities WHERE name = '".$name."';";
 $sql3 = "DELETE FROM cryptocurrencies WHERE name = '".$name."';";
+$sql4 = "DELETE FROM updates WHERE name = '".$name."';";
 
-if(mysqli_query($db, $sql1) == false || mysqli_query($db, $sql2) == false || mysqli_query($db, $sql3) == false) {
+if(mysqli_query($db, $sql1) == false || mysqli_query($db, $sql2) == false || mysqli_query($db, $sql3) == false || mysqli_query($db, $sql4) == false) {
     form_error();
 }
 

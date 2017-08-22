@@ -68,7 +68,7 @@
                     <select name="item">
                         <?php
                             foreach($names as $name) {
-                                echo '<option value=\"'.$name.'\">'.$name.'</option>'."\n";
+                                echo '<option value="'.$name.'">'.$name.'</option>'."\n";
                             }
                         ?>
                     </select><br><br>
@@ -82,7 +82,7 @@
                     <select name="item">
                         <?php
                             foreach($names as $name) {
-                                echo '<option value=\"'.$name.'\">'.$name.'</option>'."\n";
+                                echo '<option value="'.$name.'">'.$name.'</option>'."\n";
                             }
                         ?>
                     </select><br><br>
