@@ -60,7 +60,7 @@
             <tr class="stock" onclick="document.location = 'rollbackprice';"><td class="name"><a href="rollbackprice" class="link">Rollback Price Update for Cryptocurrency / Commodity / Security  <span class="arrow ext">⎋</span></a></td></tr>
 
             <tr class="sector"><td colspan="4" class="sector">Larger Display</td></tr>
-            <tr class="stock" onclick="document.location = 'largescreenview';"><td class="name"><a href="largescreenview" class="link">Show Market Overview  <span class="arrow ext">⎋</span></a></td></tr>
+            <tr class="stock" onclick="document.location = 'largescreenview.php';"><td class="name"><a href="largescreenview.php" class="link">Show Market Overview  <span class="arrow ext">⎋</span></a></td></tr>
 
             <tr class="sector"><td colspan="4" class="sector">Trade</td></tr>
             <tr class="stock" id="reversetransaction"><td class="name">Reverse a Transaction <span id="reversetransaction" class="arrow">⌵</span></td></tr>

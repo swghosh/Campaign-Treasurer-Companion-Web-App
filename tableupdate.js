@@ -17,6 +17,11 @@ var loadStocksInit = function(uri) {
     xhttp.send();
 }
 
+var highlight = function(tr) {
+    tr.style.backgroundColor = 'yellow';
+    tr.style.color = '#000';
+}
+
 var populateStocksInit = function() {
     loadStocksInit("stockstable.php");
 };
@@ -39,8 +44,7 @@ var loadStocksLater = function(uri) {
             if(dstrs.length == dhtrs.length) {
                 for(var i = 0; i < dstrs.length; i++) {
                     if(dstrs[i].innerHTML !== dhtrs[i].innerHTML) {
-                        dstrs[i].style.backgroundColor = 'yellow';
-                        dstrs[i].style.color = '#000';
+                        highlight(dstrs[i]);
                     }
                 }
             }
