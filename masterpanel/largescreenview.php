@@ -8,8 +8,11 @@
 </div>
 <div id="hidden" class="hidden">
 </div>
-<link href="tvl.css" rel="stylesheet" type="text/css" />
-<?php 
+<link href="lsv.css" rel="stylesheet" type="text/css" />
+<style>
+    <?php include('lsv.css'); ?>
+</style>
+<?php
     $scripts = array('../tableupdate.js', 'changestoupdatetable.js', '../stockupdate.js');
     include('foot.php'); 
 ?>
