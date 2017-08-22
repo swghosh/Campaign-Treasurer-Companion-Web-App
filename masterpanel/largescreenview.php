@@ -13,6 +13,6 @@
     <?php include('lsv.css'); ?>
 </style>
 <?php
-    $scripts = array('../tableupdate.js', 'changestoupdatetable.js', '../stockupdate.js');
+    $scripts = array('../common.js', '../tableupdate.js', 'changestoupdatetable.js', '../stockupdate.js');
     include('foot.php'); 
 ?>
