@@ -1,5 +1,28 @@
 <?php
     include('head.php');
+
+    include('../db.php');
+
+    $sql_cryptocurrencies = "SELECT name FROM cryptocurrencies;";
+    $sql_commodities = "SELECT name FROM commodities;";
+    $sql_stocks = "SELECT name FROM stocks;";
+
+    $names = array();
+
+    $res = mysqli_query($db, $sql_cryptocurrencies);
+    while($ar = mysqli_fetch_array($res)) {
+        $names[] = $ar['name'];
+    }
+
+    $res = mysqli_query($db, $sql_commodities);
+    while($ar = mysqli_fetch_array($res)) {
+        $names[] = $ar['name'];
+    }
+
+    $res = mysqli_query($db, $sql_stocks);
+    while($ar = mysqli_fetch_array($res)) {
+        $names[] = $ar['name'];
+    }
 ?>
         <table class="view">
             <tr class="sector"><td colspan="4" class="sector">News Updates</td></tr>
@@ -40,9 +63,13 @@
             <tr class="news" id="removestock"><td class="time"></td><td class="news">
                 <form method="POST" action="removestock.php">
                     <select name="item">
-                        <option value="">Amazon</option>
+                        <?php
+                            foreach($names as $name) {
+                                echo '<option value=\"'.$name.'\">'.$name.'</option>'."\n";
+                            }
+                        ?>
                     </select><br><br>
-                    <input type="submit" value="Remove" />
+                    <input type="submit" value="Remove Security / Commodity / Cryptocurrency" />
                 </form>
                 <br><br>
             </td></tr>
@@ -50,7 +77,11 @@
             <tr class="news" id="updateprice"><td class="time"></td><td class="news">
                 <form method="POST" action="updateprice.php">
                     <select name="item">
-                        <option value="">Amazon</option>
+                        <?php
+                            foreach($names as $name) {
+                                echo '<option value=\"'.$name.'\">'.$name.'</option>'."\n";
+                            }
+                        ?>
                     </select><br><br>
                     $ <input type="number" name="current" placeholder="new price" /><br>
                     <input type="submit" value="Update Price" />
@@ -79,6 +110,7 @@
                         <option value="">userA</option>
                     </select><br><br>
                     $ <input type="number" name="current" placeholder="amount" /><br>
+                    <input type="text" name="note" placeholder="note" /><br>
                     <input type="submit" value="Grant Fund" />
                 </form>
                 <br><br>
@@ -90,6 +122,7 @@
                         <option value="">userA</option>
                     </select><br><br>
                     $ <input type="number" name="current" placeholder="amount" /><br>
+                    <input type="text" name="note" placeholder="note" /><br>
                     <input type="submit" value="Deduct Fund" />
                 </form>
                 <br><br>
