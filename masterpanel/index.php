@@ -46,19 +46,19 @@
             <tr class="news" id="addstock"><td class="time"></td><td class="news">
                 <form method="POST" action="addstock.php">
                 Commodities, cryptocurrencies do not have a sector name, previous close.<br>Cryptocurrencies do not have lower circuit, upper circuit.<br><br>
-                    <select name="type">
+                    <select name="type" id="type">
                         <option value="stock">Security</option>
                         <option value="cryptocurrency">Cryptocurrency</option>
                         <option value="commodity">Commodity</option>
                     </select><br><br>
                     <input type="text" name="name" placeholder="name" /><br><br>
                     <input type="text" name="sector" placeholder="sector" /><br><br>
-                    $ <input type="number" name="pclose" placeholder="previous close" /><br><br>
-                    $ <input type="number" name="ovalue" placeholder="open value" /><br><br>
-                    $ <input type="number" name="lcircuit" placeholder="lower circuit" /><br><br>
-                    $ <input type="number" name="ucircuit" placeholder="upper circuit" /><br><br>
+                    <label for="pclose">previous close $</label> <input type="number" name="pclose" placeholder="previous close" /><br><br>
+                    <label for="ovalue">open value $</label> <input type="number" name="ovalue" placeholder="open value" /><br><br>
+                    <label for="lcircuit">lower circuit $</label> <input type="number" name="lcircuit" placeholder="lower circuit" /><br><br>
+                    <label for="ucircuit">upper circuit $</label> <input type="number" name="ucircuit" placeholder="upper circuit" /><br><br>
                     <textarea name="description" placeholder="description"></textarea><br><br>
-                    <input type="submit" value="Add Security / Commodity / Cryptocurrency" />
+                    <input type="submit" value="Add Listing" />
                 </form>
                 <br><br>
             </td></tr>
@@ -72,7 +72,7 @@
                             }
                         ?>
                     </select><br><br>
-                    <input type="submit" value="Remove Security / Commodity / Cryptocurrency" />
+                    <input type="submit" value="Remove Permanently" />
                 </form>
                 <br><br>
             </td></tr>
@@ -100,7 +100,7 @@
             <tr class="stock" id="reversetransaction"><td class="name">Reverse a Transaction <span id="reversetransaction" class="arrow">⌵</span></td></tr>
             <tr class="news" id="reversetransaction"><td class="time"></td><td class="news">
                 <form method="POST" action="reversetransaction.php">
-                    id <input type="number" name="id" placeholder="transaction" /><br>
+                    transaction <input type="number" name="id" placeholder="id" /><br>
                     <input type="submit" value="Reverse Transaction" />
                 </form>
                 <br><br>
@@ -109,7 +109,7 @@
             <tr class="stock" id="grantfunds"><td class="name">Grant Funds <span id="grantfunds" class="arrow">⌵</span></td></tr>
             <tr class="news" id="grantfunds"><td class="time"></td><td class="news">
                 <form method="POST" action="grantfunds.php">
-                    <select name="item">
+                    <select name="user">
                         <option value="">userA</option>
                     </select><br><br>
                     $ <input type="number" name="current" placeholder="amount" /><br>
@@ -121,7 +121,7 @@
             <tr class="stock" id="deductfunds"><td class="name">Deduct Funds <span id="deductfunds" class="arrow">⌵</span></td></tr>
             <tr class="news" id="deductfunds"><td class="time"></td><td class="news">
                 <form method="POST" action="deductfunds.php">
-                    <select name="item">
+                    <select name="user">
                         <option value="">userA</option>
                     </select><br><br>
                     $ <input type="number" name="current" placeholder="amount" /><br>
@@ -134,6 +134,6 @@
             <tr class="sector"><td colspan="4" class="sector copyright"><b>Please do not use this panel with the authorisation/permission of the market administrator/stock exchange board.</b><br><br>© Campaign Treasurer, Prayas 17 Fest, Christ University.<br>Designed and Developed by <a href="https://github.com/swghosh" class="author">Swarup Ghosh</a>.</td></tr>
         </table>    
 <?php
-    $scripts = array('expanders.js');
+    $scripts = array('expanders.js', 'inpanel.js');
     include('foot.php');
 ?>
