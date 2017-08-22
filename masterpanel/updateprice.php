@@ -27,7 +27,7 @@ if($ar) {
     $ovalue = $ar['ovalue'];
 
     $current = $price;
-    $difference = $pclose - $ovalue;
+    $difference = $pclose - $current;
     $percentage = ($difference / $pclose) * 100;
 
     date_default_timezone_set('Asia/Kolkata');
