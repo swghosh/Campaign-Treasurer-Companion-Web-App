@@ -148,6 +148,16 @@ table.view td.sector{
     text-transform: uppercase;
     color: #777;
 }
+table.view td.user {
+    padding: 7vh;
+    text-align: right;
+    text-transform: lowercase;
+    color: #000;
+}
+table.view td.user span.user {
+    text-transform: uppercase;
+    font-size: 1.5em;
+}
 table.view td.copyright {
     text-transform: none;
 }
