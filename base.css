@@ -102,6 +102,7 @@ table.view#details {
 }
 table.view#panel {
     padding: 2%;
+    margin-bottom: 5vh;
 }
 table.view#data {
     margin-top: 0;
