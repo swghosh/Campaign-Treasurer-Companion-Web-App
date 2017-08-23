@@ -16,7 +16,7 @@ $name = mysqli_real_escape_string($db, htmlspecialchars($_POST['name']));
 $time = mysqli_real_escape_string($db, htmlspecialchars($_POST['time']));
 $type = mysqli_real_escape_string($db, htmlspecialchars($_POST['type']));
 
-if(strpos($type, 'stock') !== -1) {
+if($type == 'stock') {
     $sql = "DELETE FROM updates WHERE name='".$name."' AND time='".$time."';";
     $sql2 = "SELECT current, difference, percentage FROM updates WHERE name = '".$name."' ORDER BY time DESC LIMIT 1;";
 
@@ -40,7 +40,7 @@ if(strpos($type, 'stock') !== -1) {
     }
     die('Successfully processed the request.');
 }
-else if(strpos($type, 'commodity' !== -1)) {
+else if($type == 'commodity') {
     $sql = "DELETE FROM updates WHERE name='".$name."' AND time='".$time."';";
     $sql2 = "SELECT current FROM updates WHERE name = '".$name."' ORDER BY time DESC LIMIT 1;";
 
@@ -66,7 +66,7 @@ else if(strpos($type, 'commodity' !== -1)) {
     }
     die('Successfully processed the request.');
 }
-else if(strpos($type, 'cryptocurrency' !== -1)) {
+else if($type == 'cryptocurrency') {
     $sql = "DELETE FROM updates WHERE name='".$name."' AND time='".$time."';";
     $sql2 = "SELECT current FROM updates WHERE name = '".$name."' ORDER BY time DESC LIMIT 1;";
 

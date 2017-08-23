@@ -15,7 +15,7 @@ if(isset($_POST['type']) == false || empty($_POST['type'])) {
 $type = $_POST['type'];
 print($type."\n");
 
-if(strpos($type, 'stock') !== -1) {
+if($type == 'stock') {
     // form validation
     if(isset($_POST['name']) == false || empty($_POST['name']) || isset($_POST['sector']) == false || empty($_POST['sector']) || isset($_POST['pclose']) == false || empty($_POST['pclose']) || isset($_POST['ovalue']) == false || empty($_POST['ovalue']) || isset($_POST['lcircuit']) == false || empty($_POST['lcircuit']) || isset($_POST['ucircuit']) == false || empty($_POST['ucircuit']) || isset($_POST['description']) == false || empty($_POST['description'])) {
         form_error();
@@ -46,7 +46,7 @@ if(strpos($type, 'stock') !== -1) {
     die('Successfully processed the request.');
 
 }
-else if(strpos($type, 'commodity') !== -1) {
+else if($type == 'commodity') {
     // form validation
     if(isset($_POST['name']) == false || empty($_POST['name']) || isset($_POST['ovalue']) == false || empty($_POST['ovalue']) || isset($_POST['lcircuit']) == false || empty($_POST['lcircuit']) || isset($_POST['ucircuit']) == false || empty($_POST['ucircuit']) || isset($_POST['description']) == false || empty($_POST['description'])) {
         form_error();
@@ -75,7 +75,7 @@ else if(strpos($type, 'commodity') !== -1) {
     
     die('Successfully processed the request.');
 }
-else if(strpos($type, 'cryptocurrency') !== -1) {
+else if($type == 'cryptocurrency') {
     // form validation
     if(isset($_POST['name']) == false || empty($_POST['name']) || isset($_POST['ovalue']) == false || empty($_POST['ovalue']) || isset($_POST['description']) == false || empty($_POST['description'])) {
         form_error();
