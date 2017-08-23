@@ -103,6 +103,9 @@ table.view#details {
 table.view#panel {
     padding: 2%;
 }
+table.view#data {
+    margin-top: 0;
+}
 table.view tr {
     padding: 0;
     margin: 0;
