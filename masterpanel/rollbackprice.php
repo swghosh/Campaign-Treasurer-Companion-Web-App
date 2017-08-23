@@ -13,7 +13,7 @@
     $res = mysqli_query($db, $sql_cryptocurrencies);
     while($ar = mysqli_fetch_array($res)) {
         $names[] = $ar['name'];
-        $types[] = 'stock';
+        $types[] = 'cryptocurrency';
     }
 
     $res = mysqli_query($db, $sql_commodities);
@@ -25,7 +25,7 @@
     $res = mysqli_query($db, $sql_stocks);
     while($ar = mysqli_fetch_array($res)) {
         $names[] = $ar['name'];
-        $types[] = 'cryptocurrency';
+        $types[] = 'stock';
     }
 ?>
     <table class="view" id="panel">
