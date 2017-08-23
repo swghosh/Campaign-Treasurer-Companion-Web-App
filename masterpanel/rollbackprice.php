@@ -25,14 +25,14 @@
     $res = mysqli_query($db, $sql_stocks);
     while($ar = mysqli_fetch_array($res)) {
         $names[] = $ar['name'];
-        $types = 'cryptocurrency';
+        $types[] = 'cryptocurrency';
     }
 ?>
         <table class="view" id="panel">
         <tr class="sector"><td colspan="4" class="sector">Navigate</td></tr>
         <tr class="stock" onclick="document.location = '/masterpanel';"><td class="name"><a href="/masterpanel" class="link">Master Panel<span class="arrow ext">⎋</span></a></td></tr>
 
-        <tr class="sector"><td colspan="4" class="sector"></td></tr>
+        <tr class="sector"><td colspan="4" class="sector">Select</td></tr>
         <tr class="news" id="removestock"><td class="time"></td>
             <td class="news">
                 <form method="POST" action="removestock.php">
@@ -49,8 +49,10 @@
                 <br><br>
             </td>
         </tr>
+        <tr class="sector"><td colspan="4" class="sector">Updates</td></tr>
+        <div id="data"></div>
         </table>    
 <?php
-    $scripts = array();
+    $scripts = array('rollbackupdatesloader.js');
     include('foot.php');
 ?>
