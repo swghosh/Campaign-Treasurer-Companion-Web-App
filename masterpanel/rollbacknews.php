@@ -1,0 +1,23 @@
+<?php
+    include('head.php');
+
+    include('../db.php');
+?>
+        <table class="view" id="panel">
+        <?php
+            $sql = "SELECT * FROM news ORDER BY time DESC;";
+            $res = mysqli_query($db, $sql);
+
+            while($ar = mysqli_fetch_array($res)) {
+                $time = $ar['time'];
+                $content = $ar['content'];
+                $id = $ar['id'];
+                $str = "<tr class=\"news\"> <form id=\"".$id."\" method=\"POST\" action=\"deletenews.php\"> <input type=\"hidden\" name=\"id\" value=\"".$id."\" form=\"".$id."\"> <input type=\"hidden\" name=\"time\" value=\"".$time."\" form=\"".$id."\"> <td class=\"time\">".$time."</td> <td class=\"news\">".$content."</td> <td class=\"news\"><button form=\"".$id."\" type=\"submit\">Rollback</button></td> </form> </tr>\n";
+                print($str);
+            }
+        ?>
+        </table>    
+<?php
+    $scripts = array();
+    include('foot.php');
+?>
