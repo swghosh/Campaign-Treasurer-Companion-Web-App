@@ -4,7 +4,7 @@
     $pages = array(
         '/index.php' => array('Home', '🏠'),
         '/details.php' => array('Details', '📈'),
-        '/trader' => array('Trader', '💵'),
+        '/trader/index.php' => array('Trader', '💵'),
         '/news.php' => array('News', '📰'),
         '/about.php' => array('About', '🔬')
     );
@@ -17,11 +17,11 @@
         <meta charset="UTF-8">
         <title>Campaign Treasurer Companion | <?php echo $page_title; ?></title>
         <meta name="viewport" content="width=device-width">
-        <link rel="stylesheet" href="base.css" type="text/css" />
+        <link rel="stylesheet" href="/base.css" type="text/css" />
         <meta name="theme-color" content="#326e82">
         <meta name="author" content="SwG Ghosh">
         <meta name="description" content="The Campaign Treasurer Companion Web App for Prayas'17 fest.">
-        <meta name="og:url" content="http://campaigntreasurercompanionwebapp.ap-south-1.elasticbeanstalk.com">
+        <meta name="og:url" content="http://campaigntreasurercompanionwebapp.ap-south-1.elasticbeanstalk.com<?php echo $current_script; ?>">
     </head>
     <body>
         <div class="bars">
