@@ -13,7 +13,6 @@ if(isset($_POST['type']) == false || empty($_POST['type'])) {
 }
 
 $type = $_POST['type'];
-print($type."\n");
 
 if($type == 'stock') {
     // form validation
@@ -65,9 +64,6 @@ else if($type == 'commodity') {
     date_default_timezone_set('Asia/Kolkata');
     $time = date('Y-m-d H:i:s');
     $sql2 = "INSERT INTO updates (name, current, time) VALUES ('$name', $current, '$time');";
-    
-    print($sql."\n");
-    print($sql2);
 
     if(mysqli_query($db, $sql) == false || mysqli_query($db, $sql2) == false) {
         form_error();
@@ -92,9 +88,6 @@ else if($type == 'cryptocurrency') {
     date_default_timezone_set('Asia/Kolkata');
     $time = date('Y-m-d H:i:s');
     $sql2 = "INSERT INTO updates (name, current, time) VALUES ('$name', $current, '$time');";
-    
-    print($sql."\n");
-    print($sql2);
 
     if(mysqli_query($db, $sql) == false || mysqli_query($db, $sql2) == false) {
         form_error();

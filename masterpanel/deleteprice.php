@@ -56,10 +56,6 @@ else if($type == 'commodity') {
 
         $sql3 = "UPDATE commodities SET current = ".$current." WHERE name = '".$name."';";
         
-        print($sql."\n");
-        print($sql2."\n");
-        print($sql3."\n");
-
         if(mysqli_query($db, $sql3) == false) {
             form_error();
         }
@@ -81,10 +77,6 @@ else if($type == 'cryptocurrency') {
         $current = $ar['current'];
 
         $sql3 = "UPDATE cryptocurrencies SET current = ".$current." WHERE name = '".$name."';";
-        
-        print($sql."\n");
-        print($sql2."\n");
-        print($sql3."\n");
 
         if(mysqli_query($db, $sql3) == false) {
             form_error();
