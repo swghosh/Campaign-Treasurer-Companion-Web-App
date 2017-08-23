@@ -264,7 +264,7 @@ textarea, input[type=text], input[type=number] {
 input[type=number] {
     width: 35%;
 }
-input[type=submit] {
+input[type=submit], button {
     padding: 2vh;
     border: none;
     font-family: 'Helvetica Neue';
@@ -275,7 +275,7 @@ input[type=submit] {
     background-color: rgba(0, 0, 0, 0.7);
     color: #fff;
 }
-input[type=submit]:hover {
+input[type=submit]:hover, button:hover {
     background-color: rgba(0, 0, 0, 0.99);
 }
 select {
