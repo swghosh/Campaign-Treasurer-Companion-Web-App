@@ -40,6 +40,8 @@ if(strpos($type, 'stock') !== -1) {
     if(mysqli_query($db, $sql) == false || mysqli_query($db, $sql2) == false) {
         form_error();
     }
+    
+    die('Successfully processed the request.');
 
 }
 else if(strpos($type, 'commodity') !== -1) {
@@ -66,6 +68,7 @@ else if(strpos($type, 'commodity') !== -1) {
         form_error();
     }
     
+    die('Successfully processed the request.');
 }
 else if(strpos($type, 'cryptocurrency') !== -1) {
     // form validation
@@ -88,6 +91,8 @@ else if(strpos($type, 'cryptocurrency') !== -1) {
     if(mysqli_query($db, $sql) == false || mysqli_query($db, $sql2) == false) {
         form_error();
     }
+    
+    die('Successfully processed the request.');
 }
 
-die('Successfully processed the request.');
+die('Unsuccesful, while processing the request.');
