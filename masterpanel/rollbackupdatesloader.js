@@ -29,3 +29,6 @@ var populate = function() {
     putInDiv("Loading... Please check connectivity and refresh this page if this takes a long time.");
     loadTable("priceupdatestable.php?name=" + selectedName() + "&type=" + selectedType());
 };
+
+document.querySelector('select').onchange = populate;
+populate();
