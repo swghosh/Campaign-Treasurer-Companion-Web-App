@@ -13,6 +13,8 @@ if(isset($_POST['type']) == false || empty($_POST['type'])) {
 }
 
 $type = $_POST['type'];
+print($type."\n");
+
 if(strpos($type, 'stock') !== -1) {
     // form validation
     if(isset($_POST['name']) == false || empty($_POST['name']) || isset($_POST['sector']) == false || empty($_POST['sector']) || isset($_POST['pclose']) == false || empty($_POST['pclose']) || isset($_POST['ovalue']) == false || empty($_POST['ovalue']) || isset($_POST['lcircuit']) == false || empty($_POST['lcircuit']) || isset($_POST['ucircuit']) == false || empty($_POST['ucircuit']) || isset($_POST['description']) == false || empty($_POST['description'])) {
@@ -63,6 +65,9 @@ else if(strpos($type, 'commodity') !== -1) {
     date_default_timezone_set('Asia/Kolkata');
     $time = date('Y-m-d H:i:s');
     $sql2 = "INSERT INTO updates (name, current, time) VALUES ('$name', $current, '$time');";
+    
+    print($sql."\n");
+    print($sql2);
 
     if(mysqli_query($db, $sql) == false || mysqli_query($db, $sql2) == false) {
         form_error();
@@ -87,6 +92,9 @@ else if(strpos($type, 'cryptocurrency') !== -1) {
     date_default_timezone_set('Asia/Kolkata');
     $time = date('Y-m-d H:i:s');
     $sql2 = "INSERT INTO updates (name, current, time) VALUES ('$name', $current, '$time');";
+    
+    print($sql."\n");
+    print($sql2);
 
     if(mysqli_query($db, $sql) == false || mysqli_query($db, $sql2) == false) {
         form_error();

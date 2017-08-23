@@ -33,7 +33,7 @@ if(strpos($type, 'stock') !== -1) {
         $percentage = $ar['percentage'];
 
         $sql3 = "UPDATE stocks SET current = ".$current.", difference = ".$difference.", percentage = ".$percentage." WHERE name = '".$name."';";
-
+        
         if(mysqli_query($db, $sql3) == false) {
             form_error();
         }
@@ -55,6 +55,10 @@ else if(strpos($type, 'commodity' !== -1)) {
         $current = $ar['current'];
 
         $sql3 = "UPDATE commodities SET current = ".$current." WHERE name = '".$name."';";
+        
+        print($sql."\n");
+        print($sql2."\n");
+        print($sql3."\n");
 
         if(mysqli_query($db, $sql3) == false) {
             form_error();
@@ -77,6 +81,10 @@ else if(strpos($type, 'cryptocurrency' !== -1)) {
         $current = $ar['current'];
 
         $sql3 = "UPDATE cryptocurrencies SET current = ".$current." WHERE name = '".$name."';";
+        
+        print($sql."\n");
+        print($sql2."\n");
+        print($sql3."\n");
 
         if(mysqli_query($db, $sql3) == false) {
             form_error();
