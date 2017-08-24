@@ -2,7 +2,7 @@
 header('Content-Type: text/plain');
 
 include('../db.php');
-include('../trader/traderfunctions.php');
+include('../trader/tradingfunctions.php');
 
 function form_error() {
     die('An error occured.');

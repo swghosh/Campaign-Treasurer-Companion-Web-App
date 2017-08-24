@@ -2,6 +2,19 @@
 include('../db.php');
 date_default_timezone_set('Asia/Kolkata');
 
+function price($item) {
+    global $db;
+
+    $sql = "SELECT current FROM updates WHERE name = '$item' ORDER BY time DESC LIMIT 1;";
+
+    $res = mysqli_query($db, $sql);
+    if($ar = mysqli_fetch_array($res)) {
+        return floatval($ar['current']);
+    }
+
+    return false;
+}
+
 function generate_transaction_id($username) {
     global $db;
     
@@ -45,7 +58,10 @@ function grant_funds($username, $value) {
         $transaction_id = generate_transaction_id($username);
 
         $sql = "INSERT INTO funds (name, time, value, id) VALUES ('$username', '$time', $value, '$transaction_id');";
-        $sql2 = "UPDATE users SET balance = ".($balance + $value)." WHERE name = '$username';";
+
+        $new_balance = $balance + $value;
+
+        $sql2 = "UPDATE users SET balance = $new_balance WHERE name = '$username';";
 
         if(mysqli_query($db, $sql) && mysqli_query($db, $sql2)) {
             return true;
@@ -59,4 +75,28 @@ function deduct_funds($username, $value) {
     $value = - floatval($value);
 
     return grant_funds($username, $value);
+}
+
+function transact_buy($username, $item, $quantity) {
+    global $db;
+
+    if($price = price($item)) {
+        $value = $price * $quantity;
+        $time = date('Y-m-d H:i:s');
+        $transaction_id = generate_transaction_id($username);
+
+        if($balance = balance($username) > $value) {
+            $sql = "INSERT INTO transactions (name, time, value, price, quantity, item, id) VALUES ('$name', '$time', $value, $price, $quantity, '$item', '$transaction_id');";
+
+            $new_balance = $balance - $value;
+
+            $sql2 = "UPDATE users SET balance = $new_balance WHERE name = '$username';";
+
+            if(mysqli_query($db, $sql) && mysqli_query($db, $sql2)) {
+                return true;
+            }
+        }
+    }
+
+    return false;
 }
