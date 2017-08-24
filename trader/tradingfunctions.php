@@ -5,7 +5,7 @@ date_default_timezone_set('Asia/Kolkata');
 function generate_transaction_id($username) {
     global $db;
     
-    $sql = "SELECT id FROM users;";
+    $sql = "SELECT id FROM users WHERE name = '$username';";
 
     $res = mysqli_query($db, $sql);
     if($ar = mysqli_fetch_array($res)) {
@@ -41,7 +41,7 @@ function grant_funds($username, $value) {
     $value = floatval($value);
 
     if($balance = balance($username)) {
-        $time = date('Y-m-d H:i:s')."\n";
+        $time = date('Y-m-d H:i:s');
         $transaction_id = generate_transaction_id($username);
 
         $sql = "INSERT INTO funds (name, time, value, id) VALUES ($username, '$time', $value, $transaction_id);";
