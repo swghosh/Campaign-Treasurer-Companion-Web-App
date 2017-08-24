@@ -44,7 +44,7 @@ function grant_funds($username, $value) {
         $time = date('Y-m-d H:i:s');
         $transaction_id = generate_transaction_id($username);
 
-        $sql = "INSERT INTO funds (name, time, value, id) VALUES ('$username', '$time', $value, $transaction_id);";
+        $sql = "INSERT INTO funds (name, time, value, id) VALUES ('$username', '$time', $value, '$transaction_id');";
         $sql2 = "UPDATE users SET balance = ".($balance + $value)." WHERE name = '$username';";
 
         if(mysqli_query($db, $sql) && mysqli_query($db, $sql2)) {
