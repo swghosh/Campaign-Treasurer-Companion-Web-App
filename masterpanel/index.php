@@ -129,8 +129,7 @@
                             }
                         ?>
                     </select><br><br>
-                    amount $ <input type="number" step="any" name="current" placeholder="amount" /><br>
-                    <input type="text" name="note" placeholder="note" /><br>
+                    amount $ <input type="number" step="any" name="value" placeholder="amount" /><br>
                     <input type="submit" value="Grant Fund" />
                 </form>
                 <br><br>
@@ -145,8 +144,7 @@
                             }
                         ?>
                     </select><br><br>
-                    amount $ <input type="number" step="any" name="current" placeholder="amount" /><br>
-                    <input type="text" name="note" placeholder="note" /><br>
+                    amount $ <input type="number" step="any" name="value" placeholder="amount" /><br>
                     <input type="submit" value="Deduct Fund" />
                 </form>
                 <br><br>
