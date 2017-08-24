@@ -3,6 +3,8 @@ include('../db.php');
 date_default_timezone_set('Asia/Kolkata');
 
 function generate_transaction_id($username) {
+    global $db;
+    
     $sql = "SELECT id FROM users;";
 
     $res = mysqli_query($db, $sql);
@@ -21,6 +23,8 @@ function generate_transaction_id($username) {
 }
 
 function balance($username) {
+    global $db;
+    
     $sql = "SELECT balance FROM users WHERE name = '$username';";
 
     $res = mysqli_query($db, $sql);
@@ -32,6 +36,8 @@ function balance($username) {
 }
 
 function grant_funds($username, $value) {
+    global $db;
+    
     $value = floatval($value);
 
     if($balance = balance($username)) {
