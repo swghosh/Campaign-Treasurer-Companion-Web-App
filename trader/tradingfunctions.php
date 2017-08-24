@@ -53,16 +53,17 @@ function grant_funds($username, $value) {
     
     $value = floatval($value);
 
-    if($balance = balance($username) !== false) {
+    $balance = balance($username);
+    if($balance !== false) {
         $time = date('Y-m-d H:i:s');
         $transaction_id = generate_transaction_id($username);
 
         $sql = "INSERT INTO funds (name, time, value, id) VALUES ('$username', '$time', $value, '$transaction_id');";
-
+        
         $new_balance = $balance + $value;
 
         $sql2 = "UPDATE users SET balance = $new_balance WHERE name = '$username';";
-
+        
         if(mysqli_query($db, $sql) && mysqli_query($db, $sql2)) {
             return true;
         }
@@ -85,13 +86,14 @@ function transact_buy($username, $item, $quantity) {
         $time = date('Y-m-d H:i:s');
         $transaction_id = generate_transaction_id($username);
 
-        if($balance = balance($username) > $value) {
-            $sql = "INSERT INTO transactions (name, time, value, price, quantity, item, id) VALUES ('$name', '$time', $value, $price, $quantity, '$item', '$transaction_id');";
+        $balance = balance($username);
+        if($balance > $value) {
+            $sql = "INSERT INTO transactions (name, time, value, price, quantity, item, id) VALUES ('$username', '$time', $value, $price, $quantity, '$item', '$transaction_id');";
 
             $new_balance = $balance - $value;
 
             $sql2 = "UPDATE users SET balance = $new_balance WHERE name = '$username';";
-
+            
             if(mysqli_query($db, $sql) && mysqli_query($db, $sql2)) {
                 return true;
             }
