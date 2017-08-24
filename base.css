@@ -150,6 +150,7 @@ table.view td.sector{
 }
 table.view td.user {
     padding: 7vh;
+    padding-top: 0.5vh;
     text-align: right;
     text-transform: lowercase;
     color: #000;
