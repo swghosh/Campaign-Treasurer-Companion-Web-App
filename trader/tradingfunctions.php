@@ -100,3 +100,9 @@ function transact_buy($username, $item, $quantity) {
 
     return false;
 }
+
+function transact_sell($username, $item, $quantity) {
+    $quantity = - intval($quantity);
+
+    return transact_buy($username, $item, $quantity);
+}
