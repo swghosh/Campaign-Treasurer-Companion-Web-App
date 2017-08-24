@@ -15,8 +15,13 @@
         <div class="bars">
             <div class="topbar">
                 <h1>
-                    Campaign Treasurer Companion Master Panel
+                    Campaign Treasurer Companion
                 </h1>
-                <br>
+                <small class="time">
+                    <?php
+                        date_default_timezone_set('Asia/Kolkata');
+                        echo date('Y-m-d H:i:s')."\n";
+                    ?>
+                </small>
             </div>
         </div>
