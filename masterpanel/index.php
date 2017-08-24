@@ -122,7 +122,7 @@
             <tr class="stock" id="grantfunds"><td class="name">Grant Funds <span id="grantfunds" class="arrow">⌵</span></td></tr>
             <tr class="news" id="grantfunds"><td class="time"></td><td class="news">
                 <form method="POST" action="grantfunds.php">
-                    <select name="user">
+                    user <select name="user">
                         <?php
                             foreach($users as $name) {
                                 echo '<option value="'.$name.'">'.$name.'</option>'."\n";
@@ -137,7 +137,7 @@
             <tr class="stock" id="deductfunds"><td class="name">Deduct Funds <span id="deductfunds" class="arrow">⌵</span></td></tr>
             <tr class="news" id="deductfunds"><td class="time"></td><td class="news">
                 <form method="POST" action="deductfunds.php">
-                    <select name="user">
+                    user <select name="user">
                         <?php
                             foreach($users as $name) {
                                 echo '<option value="'.$name.'">'.$name.'</option>'."\n";

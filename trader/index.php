@@ -12,27 +12,27 @@
         
 
         <tr class="sector"><td colspan="4" class="sector">Transact</td></tr>
-        <tr class="stock"><td class="name">Buy Commodity / Cryptocurrency / Security <span id="about" class="arrow">⌵</span></td></tr>
-        <tr class="news"><td class="time"></td><td class="news">
+        <tr class="stock" id="buy"><td class="name">Buy Commodity / Cryptocurrency / Security <span id="buy" class="arrow">⌵</span></td></tr>
+        <tr class="news" id="buy"><td class="time"></td><td class="news">
             <br><br>
         </td></tr>
-        <tr class="stock"><td class="name">Sell Commodity / Cryptocurrency / Security <span id="rules" class="arrow">⌵</span></td></tr>
-        <tr class="news"><td class="time"></td><td class="news">
+        <tr class="stock" id="sell"><td class="name">Sell Commodity / Cryptocurrency / Security <span id="sell" class="arrow">⌵</span></td></tr>
+        <tr class="news" id="sell"><td class="time"></td><td class="news">
             <br><br>
         </td></tr>
 
         <tr class="sector"><td colspan="4" class="sector">History</td></tr>
-        <tr class="stock"><td class="name">Purchased<span id="about" class="arrow">⌵</span></td></tr>
-        <tr class="news"><td class="time"></td><td class="news">
+        <tr class="stock" id="purchased"><td class="name">Purchased<span id="purchased" class="arrow">⌵</span></td></tr>
+        <tr class="news" id="purchased"><td class="time"></td><td class="news">
             <br><br>
         </td></tr>
-        <tr class="stock"><td class="name">Order Book<span id="rules" class="arrow">⌵</span></td></tr>
-        <tr class="news"><td class="time"></td><td class="news">
+        <tr class="stock" id="orderbook"><td class="name">Order Book<span id="orderbook" class="arrow">⌵</span></td></tr>
+        <tr class="news" id="orderbook"><td class="time"></td><td class="news">
             <br><br>
         </td></tr>
 
     </table>
 <?php 
-    $scripts = array();
+    $scripts = array('prompters.js');
     include('../foot.php'); 
 ?>
