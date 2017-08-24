@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Restricted Content, Trader"
+AuthUserFile /var/www/html/trader/.htpasswd
+Require valid-user

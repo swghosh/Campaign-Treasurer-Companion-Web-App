@@ -1,9 +1,11 @@
 <?php 
     include('../head.php'); 
+
+    $username = $_SERVER['REMOTE_USER'];
 ?>
     <table class="view">
         <tr class="sector">
-            <td class="user">username: <span class="user">alpha</span> (logged-in)<br>available balance: <span class="user">$0.00</span></td>
+            <td class="user">username: <span class="user"><?php echo $username; ?></span> (logged-in)<br>available balance: <span class="user">$0.00</span></td>
         </tr>
         
 
