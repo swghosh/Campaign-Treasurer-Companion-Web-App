@@ -1,7 +1,7 @@
 <?php
     include('head.php');
 
-    $username = $_SERVER['REMOTE_USER'];
+    $username = $_SERVER['PHP_AUTH_USER'];
 
     include('../db.php');
 
@@ -36,10 +36,11 @@
 ?>
         <table class="view" id="panel">
             
+            <tr class="sector"><td class="user">masterpanel,<br>access granted to: <span class="user"><?php echo $username; ?></span><br></td></tr>
+            
             <tr class="sector"><td colspan="4" class="sector">Home</td></tr>
             <tr class="stock" onclick="document.location = '/';"><td class="name"><a href="/" class="link">Campaign Treasurer Companion Home <span class="arrow ext">⎋</span></a></td></tr>
-
-            <tr class="sector"><td class="user">masterpanel, access granted to: <span class="user"><?php echo $username; ?></span><br></td></tr>
+            
             <tr class="sector"><td colspan="4" class="sector">News Updates</td></tr>
             <tr class="stock" id="addnews"><td class="name">Add News Item <span id="addnews" class="arrow">⌵</span></td></tr>
             <tr class="news" id="addnews"><td class="time"></td><td class="news">
