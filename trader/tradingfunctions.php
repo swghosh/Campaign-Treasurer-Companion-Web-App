@@ -40,7 +40,7 @@ function grant_funds($username, $value) {
     
     $value = floatval($value);
 
-    if($balance = balance($username)) {
+    if($balance = balance($username) !== false) {
         $time = date('Y-m-d H:i:s');
         $transaction_id = generate_transaction_id($username);
 
