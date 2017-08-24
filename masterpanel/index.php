@@ -1,6 +1,8 @@
 <?php
     include('head.php');
 
+    $username = $_SERVER['REMOTE_USER'];
+
     include('../db.php');
 
     $sql_cryptocurrencies = "SELECT name FROM cryptocurrencies;";
@@ -23,11 +25,21 @@
     while($ar = mysqli_fetch_array($res)) {
         $names[] = $ar['name'];
     }
+
+    $sql_users = "SELECT name FROM users;";
+    $users = array();
+
+    $res = mysqli_query($db, $sql_users);
+    while($ar = mysqli_fetch_array($res)) {
+        $users[] = $ar['name'];
+    }
 ?>
         <table class="view" id="panel">
+            
             <tr class="sector"><td colspan="4" class="sector">Home</td></tr>
             <tr class="stock" onclick="document.location = '/';"><td class="name"><a href="/" class="link">Campaign Treasurer Companion Home <span class="arrow ext">⎋</span></a></td></tr>
 
+            <tr class="sector"><td class="user">masterpanel, access granted to: <span class="user"><?php echo $username; ?></span><br></td></tr>
             <tr class="sector"><td colspan="4" class="sector">News Updates</td></tr>
             <tr class="stock" id="addnews"><td class="name">Add News Item <span id="addnews" class="arrow">⌵</span></td></tr>
             <tr class="news" id="addnews"><td class="time"></td><td class="news">
@@ -110,9 +122,13 @@
             <tr class="news" id="grantfunds"><td class="time"></td><td class="news">
                 <form method="POST" action="grantfunds.php">
                     <select name="user">
-                        <option value="">userA</option>
+                        <?php
+                            foreach($users as $name) {
+                                echo '<option value="'.$name.'">'.$name.'</option>'."\n";
+                            }
+                        ?>
                     </select><br><br>
-                    $ <input type="number" step="any" name="current" placeholder="amount" /><br>
+                    amount $ <input type="number" step="any" name="current" placeholder="amount" /><br>
                     <input type="text" name="note" placeholder="note" /><br>
                     <input type="submit" value="Grant Fund" />
                 </form>
@@ -122,9 +138,13 @@
             <tr class="news" id="deductfunds"><td class="time"></td><td class="news">
                 <form method="POST" action="deductfunds.php">
                     <select name="user">
-                        <option value="">userA</option>
+                        <?php
+                            foreach($users as $name) {
+                                echo '<option value="'.$name.'">'.$name.'</option>'."\n";
+                            }
+                        ?>
                     </select><br><br>
-                    $ <input type="number" step="any" name="current" placeholder="amount" /><br>
+                    amount $ <input type="number" step="any" name="current" placeholder="amount" /><br>
                     <input type="text" name="note" placeholder="note" /><br>
                     <input type="submit" value="Deduct Fund" />
                 </form>
