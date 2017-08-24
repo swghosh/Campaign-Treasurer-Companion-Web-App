@@ -13,7 +13,7 @@ if(isset($_POST['id']) == false || empty($_POST['id'])) {
     form_error();
 }
 
-$id = mysqli_real_escape_string($db, htmlspecialchars($_POST['user']));
+$id = mysqli_real_escape_string($db, htmlspecialchars($_POST['id']));
 
 if(reverse_transaction($id) == false) {
     form_error();
