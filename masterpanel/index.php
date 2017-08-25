@@ -150,7 +150,7 @@
                 <br><br>
             </td></tr>
             
-            <tr class="sector"><td colspan="4" class="sector copyright"><b>Please do not use this panel with the authorisation/permission of the market administrator/stock exchange board.</b><br><br>© Campaign Treasurer, Prayas 17 Fest, Christ University.<br>Designed and Developed by <a href="https://github.com/swghosh" class="author">Swarup Ghosh</a>.</td></tr>
+            <tr class="sector"><td colspan="4" class="sector copyright"><b>Please do not use this panel without the authorisation/permission of the market administrator/stock exchange board.</b><br><br>© Campaign Treasurer, Prayas 17 Fest, Christ University.<br>Designed and Developed by <a href="https://github.com/swghosh" class="author">Swarup Ghosh</a>.</td></tr>
         </table>    
 <?php
     $scripts = array('expanders.js', 'inpanel.js');
