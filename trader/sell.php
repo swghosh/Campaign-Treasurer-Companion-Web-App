@@ -4,7 +4,7 @@ $username = $_SERVER['REMOTE_USER'];
 include('tradingfunctions.php');
 
 function form_error() {
-    die('An error occured.');
+    die(header('index.php?error'));
 }
 
 // form validation
@@ -21,7 +21,7 @@ if($purchased[$item] < $quantity) {
 }
 
 if(transact_sell($username, $item, $quantity)) {
-    die('Successfully processed the request.');
+    die(header('index.php?success'));
 }
 
-die('Unsuccessful, while processing the request.');
+die(header('index.php?unsuccess'));

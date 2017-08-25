@@ -142,6 +142,19 @@
         </td></tr>
 
     </table>
+
+    <?php
+        if(isset($_GET['error'])) {
+            echo '<script>alert("Transaction Error.");';
+        }
+        else if(isset($_GET['unsuccess'])) {
+            echo '<script>alert("Transaction Unsuccessful.");';
+        }
+        else if(isset($_GET['success'])) {
+            echo '<script>alert("Transaction Successful.");';
+        }
+    ?>
+    
 <?php 
     $scripts = array('prompters.js');
     include('../foot.php'); 

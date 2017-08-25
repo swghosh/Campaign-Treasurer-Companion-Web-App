@@ -1,7 +1,7 @@
 <?php
     include('head.php');
 
-    $username = $_SERVER['PHP_AUTH_USER'];
+    $username = $_SERVER['REMOTE_USER'];
 
     include('../db.php');
 
