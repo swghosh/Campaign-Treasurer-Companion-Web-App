@@ -316,6 +316,7 @@ table.transactions td[colspan="3"], table.transactions td[colspan="6"] {
 }
 table.transactions td {
     color: #000;
+    border-bottom: 1px dashed #555;
 }
 table.transactions th {
     font-size: 0.8em;

@@ -62,7 +62,16 @@
                         $time = $ar['time'];
                         $value = $ar['value'];
 
-                        $str = "<tr><td>$id</td><td>$time</td><td>$$value</td></tr>"."\n";
+                        if(floatval($value) < 0) {
+                            $value = - floatval($value);
+                            $value = "-$".$value;
+                        }
+                        else {
+                            $value = floatval($value);
+                            $value = "$".$value;
+                        }
+
+                        $str = "<tr><td>$id</td><td>$time</td><td>$value</td></tr>"."\n";
                         echo $str;
                     }
                 ?>
@@ -81,11 +90,24 @@
                         $quantity = $ar['quantity'];
                         $price = $ar['price'];
                         $value = $ar['value'];
+                        
+                        if(floatval($value) < 0) {
+                            $value = - floatval($value);
+                            $value = "-$".$value;
+                        }
+                        else {
+                            $value = floatval($value);
+                            $value = "$".$value;
+                        }
 
-                        $str = "<tr><td>$id</td><td>$time</td><td>$item</td><td>$quantity</td><td>$price</td><td>$$value</td></tr>"."\n";
+                        $str = "<tr><td>$id</td><td>$time</td><td>$item</td><td>$quantity</td><td>$price</td><td>$value</td></tr>"."\n";
                         echo $str;
                     }
                 ?>
+            </table>
+
+            <table class="transactions">
+                <tr><td colspan="6">Available Balance = <?php echo $balance; ?></td></tr>
             </table>
         </td></tr>
 
