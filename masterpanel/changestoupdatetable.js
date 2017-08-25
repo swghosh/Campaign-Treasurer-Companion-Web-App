@@ -18,3 +18,7 @@ var populateStocksInit = function() {
 var populateStocksLater = function() {
     loadStocksLater("../stockstable.php");
 };
+
+var populateBuyers = function() {
+    loadStocksInit("buyerstable.php");
+};
