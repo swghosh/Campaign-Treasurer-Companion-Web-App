@@ -118,7 +118,7 @@
                 </form>
                 <br><br>
             </td></tr>
-            <tr class="stock" id="reversefunding"><td class="name">Reverse a Transaction <span id="reversefunding" class="arrow">⌵</span></td></tr>
+            <tr class="stock" id="reversefunding"><td class="name">Reverse a Funding Grant / Deduction <span id="reversefunding" class="arrow">⌵</span></td></tr>
             <tr class="news" id="reversefunding"><td class="time"></td><td class="news">
                 <form method="POST" action="reversefunding.php">
                     funding <input type="number" step="any" name="id" placeholder="id" /><br>
