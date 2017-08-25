@@ -306,7 +306,7 @@ select {
     color: #222;
 }
 
-table.transactions td[colspan="3"], table.transactions td[colspan="5"] {
+table.transactions td[colspan="3"], table.transactions td[colspan="6"] {
     color: #078;
     text-transform: capitalize;
     text-align: left;
