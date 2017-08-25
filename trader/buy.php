@@ -1,8 +1,8 @@
 <?php
 $username = $_SERVER['REMOTE_USER'];
-$balance = balance($username);
 
 include('tradingfunctions.php');
+$balance = balance($username);
 
 function form_error() {
     die(header('Location: index.php?error'));
