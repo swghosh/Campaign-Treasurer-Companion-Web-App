@@ -145,13 +145,13 @@
 
     <?php
         if(isset($_GET['error'])) {
-            echo '<script>alert("Transaction Error.");';
+            echo '<script>alert("Transaction Error.");</script>';
         }
         else if(isset($_GET['unsuccess'])) {
-            echo '<script>alert("Transaction Unsuccessful.");';
+            echo '<script>alert("Transaction Unsuccessful.");</script>';
         }
         else if(isset($_GET['success'])) {
-            echo '<script>alert("Transaction Successful.");';
+            echo '<script>alert("Transaction Successful.");</script>';
         }
     ?>
     

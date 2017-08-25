@@ -16,7 +16,6 @@ if(isset($_POST['item']) == false || empty($_POST['item']) || isset($_POST['quan
 $item = mysqli_real_escape_string($db, htmlspecialchars($_POST['item']));
 $quantity = mysqli_real_escape_string($db, htmlspecialchars($_POST['quantity']));
 
-$purchased = purchased($username);
 $value = 0;
 if($price = price($item)) {
     $value = $price * $quantity;
@@ -25,7 +24,7 @@ if($price = price($item)) {
     }
 }
 
-if(transact_sell($username, $item, $quantity)) {
+if(transact_buy($username, $item, $quantity)) {
     die(header('Location: index.php?success'));
 }
 
