@@ -306,6 +306,24 @@ select {
     color: #222;
 }
 
+table.transactions td[colspan="3"] {
+    color: #078;
+    text-transform: capitalize;
+    text-align: left;
+    padding-left: 3vw;
+    font-size: 1.6em;
+    border-bottom: 2px solid #078;
+}
+table.transactions td {
+    color: #000;
+}
+table.transactions th {
+    font-size: 0.8em;
+    padding: 2%;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
 @media only screen and (min-width : 1200px) {
     div.bars {
         position: fixed;

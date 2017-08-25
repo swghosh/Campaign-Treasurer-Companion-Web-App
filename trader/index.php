@@ -4,6 +4,28 @@
 
     $username = $_SERVER['REMOTE_USER'];
     $balance = balance($username);
+
+    // list of items for purchase
+    $sql_cryptocurrencies = "SELECT name FROM cryptocurrencies;";
+    $sql_commodities = "SELECT name FROM commodities;";
+    $sql_stocks = "SELECT name FROM stocks;";
+
+    $items = array();
+
+    $res = mysqli_query($db, $sql_cryptocurrencies);
+    while($ar = mysqli_fetch_array($res)) {
+        $items[] = $ar['name'];
+    }
+
+    $res = mysqli_query($db, $sql_commodities);
+    while($ar = mysqli_fetch_array($res)) {
+        $items[] = $ar['name'];
+    }
+
+    $res = mysqli_query($db, $sql_stocks);
+    while($ar = mysqli_fetch_array($res)) {
+        $items[] = $ar['name'];
+    }
 ?>
     <table class="view">
         <tr class="sector">
@@ -28,7 +50,42 @@
         </td></tr>
         <tr class="stock" id="orderbook"><td class="name">Order Book<span id="orderbook" class="arrow">⌵</span></td></tr>
         <tr class="news" id="orderbook"><td class="time"></td><td class="news">
-            <br><br>
+            <table class="transactions">
+                <tr><td colspan="3">Funds</td></tr>
+                <tr><th>id</th><th>time</th><th>value</th></tr>
+                <?php
+                    $sql = "SELECT id, time, value FROM funds WHERE name = '$username' ORDER BY time;";
+                    $res = mysqli_query($db, $sql);
+                    while($ar = mysqli_fetch_array($db, $res)) {
+                        $id = $ar['id'];
+                        $time = $ar['time'];
+                        $value = $ar['value'];
+
+                        $str = "<tr><td>$id</td><td>$time</td><td>$$value</td></tr>"."\n";
+                        echo $str;
+                    }
+                ?>
+            </table>
+
+            <table class="transactions">
+                <tr><td colspan="6">Transactions</td></tr>
+                <tr><th>id</th><th>time</th><th>share</th><th>quantity</th><th>price</th><th>value</th></tr>
+                <?php
+                    $sql = "SELECT id, time, item, quantity, price, value FROM transactions WHERE name = '$username' ORDER BY time;";
+                    $res = mysqli_query($db, $sql);
+                    while($ar = mysqli_fetch_array($db, $res)) {
+                        $id = $ar['id'];
+                        $time = $ar['time'];
+                        $item = $ar['item'];
+                        $quantity = $ar['quantity'];
+                        $price = $ar['price'];
+                        $value = $ar['value'];
+
+                        $str = "<tr><td>$id</td><td>$time</td><td>$item</td><td>$quantity</td><td>$price</td><td>$$value</td></tr>"."\n";
+                        echo $str;
+                    }
+                ?>
+            </table>
         </td></tr>
 
     </table>
