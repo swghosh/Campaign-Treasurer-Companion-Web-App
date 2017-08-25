@@ -57,7 +57,7 @@
                 <?php
                     $sql = "SELECT id, time, value FROM funds WHERE name = '$username' ORDER BY time;";
                     $res = mysqli_query($db, $sql);
-                    while($ar = mysqli_fetch_array($db, $res)) {
+                    while($ar = mysqli_fetch_array($res)) {
                         $id = $ar['id'];
                         $time = $ar['time'];
                         $value = $ar['value'];
@@ -74,7 +74,7 @@
                 <?php
                     $sql = "SELECT id, time, item, quantity, price, value FROM transactions WHERE name = '$username' ORDER BY time;";
                     $res = mysqli_query($db, $sql);
-                    while($ar = mysqli_fetch_array($db, $res)) {
+                    while($ar = mysqli_fetch_array($res)) {
                         $id = $ar['id'];
                         $time = $ar['time'];
                         $item = $ar['item'];
