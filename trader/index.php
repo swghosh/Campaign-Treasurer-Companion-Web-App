@@ -37,7 +37,17 @@
         <tr class="sector"><td colspan="4" class="sector">Transact</td></tr>
         <tr class="stock" id="buy"><td class="name">Buy Commodity / Cryptocurrency / Security <span id="buy" class="arrow">⌵</span></td></tr>
         <tr class="news" id="buy"><td class="time"></td><td class="news">
-            <br><br>
+            <form method="POST" action="updateprice.php">
+                    <select name="item">
+                        <?php
+                            foreach($items as $item) {
+                                echo '<option value="'.$item.'">'.$item.'</option>'."\n";
+                            }
+                        ?>
+                    </select><br><br>
+                    quantity<input type="number" step="any" name="quantity" placeholder="quantity" /><br>
+                    <input type="submit" value="Buy" />
+                </form>
         </td></tr>
         <tr class="stock" id="sell"><td class="name">Sell Commodity / Cryptocurrency / Security <span id="sell" class="arrow">⌵</span></td></tr>
         <tr class="news" id="sell"><td class="time"></td><td class="news">
@@ -107,7 +117,7 @@
             </table>
 
             <table class="transactions">
-                <tr><td colspan="6">Available Balance = <?php echo $balance; ?></td></tr>
+                <tr><td colspan="6">Available Balance = $<?php echo $balance; ?></td></tr>
             </table>
         </td></tr>
 
