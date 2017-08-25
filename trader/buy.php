@@ -5,7 +5,7 @@ $balance = balance($username);
 include('tradingfunctions.php');
 
 function form_error() {
-    die(header('index.php?error'));
+    die(header('Location: index.php?error'));
 }
 
 // form validation
@@ -26,7 +26,7 @@ if($price = price($item)) {
 }
 
 if(transact_sell($username, $item, $quantity)) {
-    die(header('index.php?success'));
+    die(header('Location: index.php?success'));
 }
 
-die(header('index.php?unsuccess'));
+die(header('Location: index.php?unsuccess'));
