@@ -135,3 +135,30 @@ function reverse_transaction($id) {
 
     return false;
 }
+
+function reverse_funding($id) {
+    global $db;
+
+    $sql = "SELECT name, value FROM funds WHERE id = '$id';";
+
+    $res = mysqli_query($db, $sql);
+    if($ar = mysqli_fetch_array($res)) {
+        $username = $ar['name'];
+        $value = $ar['value'];
+
+        $balance = balance($username);
+        if($balance !== false) {
+            $sql = "DELETE FROM funds WHERE id = '$id';";
+
+            $new_balance = $balance - $value;
+
+            $sql2 = "UPDATE users SET balance = $new_balance WHERE name = '$username';";
+
+            if(mysqli_query($db, $sql) && mysqli_query($db, $sql2)) {
+                return true;
+            }
+        }
+    }
+
+    return false;
+}

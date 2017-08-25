@@ -118,6 +118,14 @@
                 </form>
                 <br><br>
             </td></tr>
+            <tr class="stock" id="reversefunding"><td class="name">Reverse a Transaction <span id="reversefunding" class="arrow">⌵</span></td></tr>
+            <tr class="news" id="reversefunding"><td class="time"></td><td class="news">
+                <form method="POST" action="reversefunding.php">
+                    funding <input type="number" step="any" name="id" placeholder="id" /><br>
+                    <input type="submit" value="Reverse Funding" />
+                </form>
+                <br><br>
+            </td></tr>
             <tr class="stock" onclick="document.location = 'activebuyers.php';"><td class="name"><a href="activebuyers.php" class="link">Show Active Buyers <span class="arrow ext">⎋</span></a></td></tr>
             <tr class="stock" id="grantfunds"><td class="name">Grant Funds <span id="grantfunds" class="arrow">⌵</span></td></tr>
             <tr class="news" id="grantfunds"><td class="time"></td><td class="news">
@@ -149,6 +157,7 @@
                 </form>
                 <br><br>
             </td></tr>
+            <tr class="stock" onclick="document.location = 'userbalances.php';"><td class="name"><a href="userbalances.php" class="link">User Balances <span class="arrow ext">⎋</span></a></td></tr>
             
             <tr class="sector"><td colspan="4" class="sector copyright"><b>Please do not use this panel without the authorisation/permission of the market administrator/stock exchange board.</b><br><br>© Campaign Treasurer, Prayas 17 Fest, Christ University.<br>Designed and Developed by <a href="https://github.com/swghosh" class="author">Swarup Ghosh</a>.</td></tr>
         </table>    

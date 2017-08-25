@@ -1,4 +1,4 @@
-var ids = ['addnews', 'addstock', 'removestock', 'updateprice', 'reversetransaction', 'grantfunds', 'deductfunds'];
+var ids = ['addnews', 'addstock', 'removestock', 'updateprice', 'reversetransaction', 'reversefunding', 'grantfunds', 'deductfunds'];
 
 var flags = {};
 var items = {};
