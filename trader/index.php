@@ -5,6 +5,7 @@
     $username = $_SERVER['REMOTE_USER'];
     $balance = balance($username);
 
+    include('../db.php');
     // list of items for purchase
     $sql_cryptocurrencies = "SELECT name FROM cryptocurrencies;";
     $sql_commodities = "SELECT name FROM commodities;";
