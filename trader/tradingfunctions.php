@@ -162,3 +162,34 @@ function reverse_funding($id) {
 
     return false;
 }
+
+function purchased($username) {
+    global $db;
+
+    $items = array();
+
+    $sql = "SELECT item, quantity FROM transactions WHERE name = '$username';";
+
+    if($res = mysqli_query($db, $sql)) {
+        while($ar = mysqli_fetch_array($res)) {
+            $item = $ar['item'];
+            $quantity = intval($ar['quantity']);
+            if(isset($items[$item])) {
+                $items[$item] = $items[$item] + $quantity;
+            }
+            else {
+                $items[$item] = $quantity;
+            }
+        }
+
+        foreach($items as $item => $quantity) {
+            if($quantity <= 0) {
+                unset($items[$item]);
+            }
+        }
+        
+        return $items;
+    }
+
+    return false;
+}

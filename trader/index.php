@@ -4,6 +4,7 @@
 
     $username = $_SERVER['REMOTE_USER'];
     $balance = balance($username);
+    $purchased_items = purchased($username);
 
     include('../db.php');
     // list of items for purchase
@@ -45,7 +46,7 @@
                             }
                         ?>
                     </select><br><br>
-                    quantity<input type="number" step="any" name="quantity" placeholder="quantity" /><br>
+                    quantity <input type="number" step="any" name="quantity" placeholder="quantity" /><br>
                     <input type="submit" value="Buy" />
                 </form>
         </td></tr>
@@ -57,7 +58,16 @@
         <tr class="sector"><td colspan="4" class="sector">History</td></tr>
         <tr class="stock" id="purchased"><td class="name">Purchased<span id="purchased" class="arrow">⌵</span></td></tr>
         <tr class="news" id="purchased"><td class="time"></td><td class="news">
-            <br><br>
+        <table class="transactions">
+                <tr><td colspan="3">Purchased Shares</td></tr>
+                <tr><th>name</th><th>quantity</th></tr>
+                <?php
+                    foreach($purchased_items as $item => $quantity) {
+                        $str = "<tr><td>$item</td><td>$quantity</td></tr>"."\n";
+                        echo $str;
+                    }
+                ?>
+            </table>
         </td></tr>
         <tr class="stock" id="orderbook"><td class="name">Order Book<span id="orderbook" class="arrow">⌵</span></td></tr>
         <tr class="news" id="orderbook"><td class="time"></td><td class="news">
