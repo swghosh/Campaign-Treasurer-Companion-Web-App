@@ -66,20 +66,22 @@
         </td></tr>
 
         <tr class="sector"><td colspan="4" class="sector">History</td></tr>
-        <tr class="stock" id="purchased"><td class="name">Purchased<span id="purchased" class="arrow">⌵</span></td></tr>
+        <tr class="stock" id="purchased"><td class="name">Portfolio <span id="purchased" class="arrow">⌵</span></td></tr>
         <tr class="news" id="purchased"><td class="time"></td><td class="news">
         <table class="transactions">
-                <tr><td colspan="3">Portfolio</td></tr>
-                <tr><th>name</th><th>quantity</th></tr>
+                <tr><td colspan="6">Final Portfolio</td></tr>
+                <tr><th>name</th><th>quantity</th><th>market price</th><th>market value</th></tr>
                 <?php
                     foreach($purchased_items as $item => $quantity) {
-                        $str = "<tr><td>$item</td><td>$quantity</td></tr>"."\n";
+                        $price = price($item);
+                        $value = $price * $quantity;
+                        $str = "<tr><td>$item</td><td>$quantity</td><td>$price</td><td>$quantity</td></tr>"."\n";
                         echo $str;
                     }
                 ?>
             </table>
         </td></tr>
-        <tr class="stock" id="orderbook"><td class="name">Order Book<span id="orderbook" class="arrow">⌵</span></td></tr>
+        <tr class="stock" id="orderbook"><td class="name">Order Book <span id="orderbook" class="arrow">⌵</span></td></tr>
         <tr class="news" id="orderbook"><td class="time"></td><td class="news">
             <table class="transactions">
                 <tr><td colspan="3">Funds</td></tr>
