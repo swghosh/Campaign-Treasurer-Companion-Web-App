@@ -78,7 +78,7 @@
                             $value = $price * $quantity;
 
                             $total = $total + $value;
-                            $str = "<tr><td>$item</td><td>$quantity</td><td>$price</td><td>$value</td></tr>"."\n";
+                            $str = "<tr><td>$item</td><td>$quantity</td><td>$$price</td><td>$$value</td></tr>"."\n";
                             echo $str;
                         }
                     ?>
@@ -134,18 +134,16 @@
                         $type = "";
                         if(floatval($value) < 0) {
                             $value = - floatval($value);
-                            $value = "-$".$value;
                             $quantity = - intval($quantity);
                             $type = "Buy";
                         }
                         else {
                             $value = floatval($value);
-                            $value = "$".$value;
                             $quantity = intval($quantity);
                             $type = "Sell";
                         }
 
-                        $str = "<tr><td>$id</td><td>$time</td><td>$item</td><td>$quantity</td><td>$price</td><td>$value</td><td>$type</td></tr>"."\n";
+                        $str = "<tr><td>$id</td><td>$time</td><td>$item</td><td>$quantity</td><td>$$price</td><td>$$value</td><td>$type</td></tr>"."\n";
                         echo $str;
                     }
                 ?>
