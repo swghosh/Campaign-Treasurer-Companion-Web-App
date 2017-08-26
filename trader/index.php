@@ -83,10 +83,6 @@
                         }
                     ?>
             </table>
-                        
-            <table class="transactions">
-                    <tr><td colspan="4">Total Portfolio Value = $<?php echo $total; ?></td></tr>
-            </table>
 
         </td></tr>
         <tr class="stock" id="orderbook"><td class="name">Order Book <span id="orderbook" class="arrow">⌵</span></td></tr>
@@ -117,6 +113,8 @@
                 ?>
             </table>
 
+            <br>
+            
             <table class="transactions">
                 <tr><td colspan="7">Transactions</td></tr>
                 <tr><th>id</th><th>time</th><th>share</th><th>quantity</th><th>price</th><th>value</th><th>type</th></tr>
@@ -149,8 +147,13 @@
                 ?>
             </table>
 
+            <br>
             <table class="transactions">
                 <tr><td colspan="6">Available Balance = $<?php echo $balance; ?></td></tr>
+            </table>
+            <br>
+            <table class="transactions">
+                <tr><td colspan="4">Total Portfolio Value = $<?php echo $total; ?></td></tr>
             </table>
         </td></tr>
 
