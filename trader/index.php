@@ -69,13 +69,13 @@
         <tr class="stock" id="purchased"><td class="name">Portfolio <span id="purchased" class="arrow">⌵</span></td></tr>
         <tr class="news" id="purchased"><td class="time"></td><td class="news">
         <table class="transactions">
-                <tr><td colspan="6">Final Portfolio</td></tr>
+                <tr><td colspan="4">Final Portfolio</td></tr>
                 <tr><th>name</th><th>quantity</th><th>market price</th><th>market value</th></tr>
                 <?php
                     foreach($purchased_items as $item => $quantity) {
                         $price = price($item);
                         $value = $price * $quantity;
-                        $str = "<tr><td>$item</td><td>$quantity</td><td>$price</td><td>$quantity</td></tr>"."\n";
+                        $str = "<tr><td>$item</td><td>$quantity</td><td>$price</td><td>$value</td></tr>"."\n";
                         echo $str;
                     }
                 ?>
