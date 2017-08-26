@@ -68,18 +68,26 @@
         <tr class="sector"><td colspan="4" class="sector">History</td></tr>
         <tr class="stock" id="purchased"><td class="name">Portfolio <span id="purchased" class="arrow">⌵</span></td></tr>
         <tr class="news" id="purchased"><td class="time"></td><td class="news">
-        <table class="transactions">
-                <tr><td colspan="4">Final Portfolio</td></tr>
-                <tr><th>name</th><th>quantity</th><th>market price</th><th>market value</th></tr>
-                <?php
-                    foreach($purchased_items as $item => $quantity) {
-                        $price = price($item);
-                        $value = $price * $quantity;
-                        $str = "<tr><td>$item</td><td>$quantity</td><td>$price</td><td>$value</td></tr>"."\n";
-                        echo $str;
-                    }
-                ?>
+            <table class="transactions">
+                    <tr><td colspan="4">Final Portfolio</td></tr>
+                    <tr><th>name</th><th>quantity</th><th>market price</th><th>market value</th></tr>
+                    <?php
+                        $total = 0.0;
+                        foreach($purchased_items as $item => $quantity) {
+                            $price = price($item);
+                            $value = $price * $quantity;
+
+                            $total = $total + $value;
+                            $str = "<tr><td>$item</td><td>$quantity</td><td>$price</td><td>$value</td></tr>"."\n";
+                            echo $str;
+                        }
+                    ?>
             </table>
+                        
+            <table class="transactions">
+                    <tr><td colspan="4">Total Portfolio Value = $<?php echo $total; ?></td></tr>
+            </table>
+
         </td></tr>
         <tr class="stock" id="orderbook"><td class="name">Order Book <span id="orderbook" class="arrow">⌵</span></td></tr>
         <tr class="news" id="orderbook"><td class="time"></td><td class="news">
@@ -110,8 +118,8 @@
             </table>
 
             <table class="transactions">
-                <tr><td colspan="6">Transactions</td></tr>
-                <tr><th>id</th><th>time</th><th>share</th><th>quantity</th><th>price</th><th>value</th></tr>
+                <tr><td colspan="7">Transactions</td></tr>
+                <tr><th>id</th><th>time</th><th>share</th><th>quantity</th><th>price</th><th>value</th><th>type</th></tr>
                 <?php
                     $sql = "SELECT id, time, item, quantity, price, value FROM transactions WHERE name = '$username' ORDER BY time;";
                     $res = mysqli_query($db, $sql);
@@ -123,16 +131,21 @@
                         $price = $ar['price'];
                         $value = $ar['value'];
                         
+                        $type = "";
                         if(floatval($value) < 0) {
                             $value = - floatval($value);
                             $value = "-$".$value;
+                            $quantity = - intval($quantity);
+                            $type = "Buy";
                         }
                         else {
                             $value = floatval($value);
                             $value = "$".$value;
+                            $quantity = intval($quantity);
+                            $type = "Sell";
                         }
 
-                        $str = "<tr><td>$id</td><td>$time</td><td>$item</td><td>$quantity</td><td>$price</td><td>$value</td></tr>"."\n";
+                        $str = "<tr><td>$id</td><td>$time</td><td>$item</td><td>$quantity</td><td>$price</td><td>$value</td><td>$type</td></tr>"."\n";
                         echo $str;
                     }
                 ?>

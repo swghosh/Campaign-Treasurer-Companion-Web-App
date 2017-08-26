@@ -310,7 +310,7 @@ table.transactions {
     table-layout: fixed;
     width: 100%;
 }
-table.transactions td[colspan="3"], table.transactions td[colspan="6"] {
+table.transactions td[colspan="3"], table.transactions td[colspan="4"], table.transactions td[colspan="5"], table.transactions td[colspan="6"], table.transactions td[colspan="7"] {
     color: #078;
     text-transform: capitalize;
     text-align: left;
