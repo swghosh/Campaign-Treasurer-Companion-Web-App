@@ -69,7 +69,7 @@
         <tr class="stock" id="purchased"><td class="name">Purchased<span id="purchased" class="arrow">⌵</span></td></tr>
         <tr class="news" id="purchased"><td class="time"></td><td class="news">
         <table class="transactions">
-                <tr><td colspan="3">Purchased Shares</td></tr>
+                <tr><td colspan="3">Portfolio</td></tr>
                 <tr><th>name</th><th>quantity</th></tr>
                 <?php
                     foreach($purchased_items as $item => $quantity) {

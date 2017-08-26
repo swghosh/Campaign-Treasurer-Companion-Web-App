@@ -1,7 +1,5 @@
 <?php
-    include('head.php');
-
-    
+    include('head.php'); 
 ?>
         <div id="data">
             <?php include('buyerstable.php'); ?>
