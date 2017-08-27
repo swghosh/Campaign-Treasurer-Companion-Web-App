@@ -8,6 +8,7 @@
         <tr class="stock" onclick="document.location = '/masterpanel';"><td class="name" colspan="4"><a href="/masterpanel" class="link">Master Panel<span class="arrow ext">⎋</span></a></td></tr>
 
         <tr class="sector"><td colspan="4" class="sector">All Transactions</td></tr>
+        <tr class="stock"><td class="name" colspan="4">
             <table class="transactions">
                 <tr><td colspan="6">Transactions</td></tr>
                 <tr><th>id</th><th>username</th><th>time</th><th>share</th><th>quantity</th><th>price</th><th>value</th><th>type</th></tr>
@@ -42,6 +43,7 @@
             </table>
 
             <br>
+            </td></tr>
         </table>    
 <?php
     $scripts = array();
