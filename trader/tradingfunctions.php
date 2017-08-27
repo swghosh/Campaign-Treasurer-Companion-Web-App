@@ -2,6 +2,8 @@
 include('../db.php');
 date_default_timezone_set('Asia/Kolkata');
 
+$transaction_limit = 5000000; // 5 million
+
 function price($item) {
     global $db;
 
@@ -83,6 +85,11 @@ function transact_buy($username, $item, $quantity) {
 
     if($price = price($item)) {
         $value = $price * $quantity;
+
+        if($value > $transaction_limit) {
+            return false;
+        }
+
         $time = date('Y-m-d H:i:s');
         $transaction_id = generate_transaction_id($username);
 
