@@ -84,6 +84,11 @@
                     ?>
             </table>
 
+            <br>
+            <table class="transactions">
+                <tr><td colspan="4">Total Portfolio Value = $<?php echo $total; ?></td></tr>
+            </table>
+
         </td></tr>
         <tr class="stock" id="orderbook"><td class="name">Order Book <span id="orderbook" class="arrow">⌵</span></td></tr>
         <tr class="news" id="orderbook"><td class="time"></td><td class="news">
