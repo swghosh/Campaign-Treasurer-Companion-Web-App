@@ -31,7 +31,7 @@
 ?>
     <table class="view">
         <tr class="sector">
-            <td class="user">username: <span class="user"><?php echo $username; ?></span> (logged-in)<br>available balance: <span class="user">$<?php echo $balance; ?></span><br><a href="<?php $urlout = ((!empty($_SERVER['HTTPS'])) ? 'https' : 'http').'://logout:logout@'.$_SERVER['HTTP_HOST'].$_SERVER['SCRIPT_NAME']; echo $urlout; ?>" class="author">log out</a></td>
+            <td class="user">username: <span class="user"><?php echo $username; ?></span> (logged-in)<br>available balance: <span class="user">$<?php echo $balance; ?></span><br><a href="<?php $urlout = '//logout:logout@'.$_SERVER['HTTP_HOST'].$_SERVER['SCRIPT_NAME']; echo $urlout; ?>" class="author">log out</a></td>
         </tr>
         
 
