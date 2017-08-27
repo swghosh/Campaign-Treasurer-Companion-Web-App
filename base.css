@@ -310,7 +310,7 @@ table.transactions {
     table-layout: fixed;
     width: 100%;
 }
-table.transactions td[colspan="3"], table.transactions td[colspan="4"], table.transactions td[colspan="5"], table.transactions td[colspan="6"], table.transactions td[colspan="7"] {
+table.transactions td[colspan="3"], table.transactions td[colspan="4"], table.transactions td[colspan="5"], table.transactions td[colspan="6"], table.transactions td[colspan="7"], table.transactions td[colspan="8"] {
     color: #078;
     text-transform: capitalize;
     text-align: left;
@@ -329,6 +329,7 @@ table.transactions th {
     font-weight: 500;
     text-transform: uppercase;
     text-align: left;
+    word-wrap: break-word;
 }
 
 @media only screen and (min-width : 1200px) {

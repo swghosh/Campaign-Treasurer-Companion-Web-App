@@ -10,7 +10,7 @@
         <tr class="sector"><td colspan="4" class="sector">All Transactions</td></tr>
         <tr class="stock"><td class="name" colspan="4">
             <table class="transactions">
-                <tr><td colspan="6">Transactions</td></tr>
+                <tr><td colspan="8">Transactions</td></tr>
                 <tr><th>id</th><th>username</th><th>time</th><th>share</th><th>quantity</th><th>price</th><th>value</th><th>type</th></tr>
                 <?php
                     $sql = "SELECT id, name, item, time, quantity, price, value FROM transactions;";
