@@ -28,10 +28,18 @@
     while($ar = mysqli_fetch_array($res)) {
         $items[] = $ar['name'];
     }
+
+    $total = 0.0;
+    foreach($purchased_items as $item => $quantity) {
+        $price = price($item);
+        $value = $price * $quantity;
+
+        $total = $total + $value;
+    }
 ?>
     <table class="view">
         <tr class="sector">
-            <td class="user">username: <span class="user"><?php echo $username; ?></span> (logged-in)<br>available balance: <span class="user">$<?php echo $balance; ?></span><br><a href="<?php $urlout = '//logout:logout@'.$_SERVER['HTTP_HOST'].$_SERVER['SCRIPT_NAME']; echo $urlout; ?>" class="author">log out</a></td>
+            <td class="user">username: <span class="user"><?php echo $username; ?></span> (logged-in)<br>available funds: <span class="user">$<?php echo $balance; ?></span><br>market portfolio value: <span class="user">$<?php echo $total; ?></span><br><br>total value: <span class="user">$<?php echo ($total + $balance); ?></span><br><br><a href="<?php $urlout = '//logout:logout@'.$_SERVER['HTTP_HOST'].$_SERVER['SCRIPT_NAME']; echo $urlout; ?>" class="author">log out</a></td>
         </tr>
         
 
@@ -72,12 +80,10 @@
                     <tr><td colspan="4">Final Portfolio</td></tr>
                     <tr><th>name</th><th>quantity</th><th>market price</th><th>market value</th></tr>
                     <?php
-                        $total = 0.0;
                         foreach($purchased_items as $item => $quantity) {
                             $price = price($item);
                             $value = $price * $quantity;
 
-                            $total = $total + $value;
                             $str = "<tr><td>$item</td><td>$quantity</td><td>$$price</td><td>$$value</td></tr>"."\n";
                             echo $str;
                         }
