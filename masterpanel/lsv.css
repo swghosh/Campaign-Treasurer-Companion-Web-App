@@ -1,6 +1,8 @@
 /* adjustments in table.view to allow viewing in a single view as on a large screen */
 table.view {
     text-align: center;
+    font-weight: 500;
+    font-size: 1.1em;
 }
 table.view tr.sector {
     display: none;
@@ -8,10 +10,14 @@ table.view tr.sector {
 table.view tr {
     padding: 0;
     display: inline-block;
-    width: 32vw;
+    width: 30vw;
     margin-left: 5vw;
-    margin: 0.5vw;
+    margin: 0.1%;
 }
 table.view td {
     display: inline-block;
+    font-size: 0.9em;
+}
+table.view td.name {
+    font-size: 1.1em;
 }
