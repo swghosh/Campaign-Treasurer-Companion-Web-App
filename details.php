@@ -11,8 +11,8 @@
         include_once('db.php');
 
         $sql_cryptocurrencies = "SELECT name, current, description, ovalue FROM cryptocurrencies ORDER BY name;";
-        $sql_commodities = "SELECT name, current, description, ovalue, lcircuit, ucircuit FROM commodities ORDER BY name;";
-        $sql_stocks = "SELECT name, sector, current, difference, percentage, description, pclose, ovalue, lcircuit, ucircuit FROM stocks ORDER BY name;";
+        $sql_commodities = "SELECT name, current, description, ovalue FROM commodities ORDER BY name;";
+        $sql_stocks = "SELECT name, sector, current, difference, percentage, description, pclose, ovalue FROM stocks ORDER BY name;";
 
     ?>
             <tr class="sector"><td class="sector">Cryptocurrencies</td></tr> 
@@ -81,8 +81,6 @@
             $current = $ar['current'];
             $description = $ar['description'];
             $ovalue = $ar['ovalue'];
-            $lcircuit = $ar['lcircuit'];
-            $ucircuit = $ar['ucircuit'];
 
             $str = "<tr class=\"profile\" id=\"$name\">
             <td class=\"profile\">
@@ -97,10 +95,6 @@
                 <br>
                 <br>
                 Open Value: <b>$$ovalue</b>
-                <br>
-                Upper Circuit: <b>$$ucircuit</b>
-                <br>
-                Lower Circuit: <b>$$lcircuit</b>
                 <br>
                 <canvas id=\"chart $name\" class=\"chart\"></canvas>
                 <br>
@@ -149,8 +143,6 @@
             $description = $ar['description'];
             $pclose = $ar['pclose'];
             $ovalue = $ar['ovalue'];
-            $lcircuit = $ar['lcircuit'];
-            $ucircuit = $ar['ucircuit'];
 
             $str = '';
             if($difference < 0) {
@@ -174,10 +166,6 @@
                         Previous Close: <b>$$pclose</b>
                         <br>
                         Open Value: <b>$$ovalue</b>
-                        <br>
-                        Upper Circuit: <b>$$ucircuit</b>
-                        <br>
-                        Lower Circuit: <b>$$lcircuit</b>
                         <br>
                         <canvas id=\"chart $name\" class=\"chart\"></canvas>
                         <br>
@@ -206,10 +194,6 @@
                         Previous Close: <b>$$pclose</b>
                         <br>
                         Open Value: <b>$$ovalue</b>
-                        <br>
-                        Upper Circuit: <b>$$ucircuit</b>
-                        <br>
-                        Lower Circuit: <b>$$lcircuit</b>
                         <br>
                         <canvas id=\"chart $name\" class=\"chart\"></canvas>
                         <br>

@@ -68,8 +68,6 @@
                     <input type="text" name="sector" placeholder="sector" /><br><br>
                     <label for="pclose">previous close $</label> <input type="number" step="any" name="pclose" placeholder="previous close" /><br><br>
                     <label for="ovalue">open value $</label> <input type="number" step="any" name="ovalue" placeholder="open value" /><br><br>
-                    <label for="lcircuit">lower circuit $</label> <input type="number" step="any" name="lcircuit" placeholder="lower circuit" /><br><br>
-                    <label for="ucircuit">upper circuit $</label> <input type="number" step="any" name="ucircuit" placeholder="upper circuit" /><br><br>
                     <textarea name="description" placeholder="description"></textarea><br><br>
                     <input type="submit" value="Add Listing" />
                 </form>
