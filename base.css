@@ -158,6 +158,7 @@ table.view td.user {
 table.view td.user span.user {
     text-transform: uppercase;
     font-size: 1.5em;
+    color: #358;
 }
 table.view td.copyright {
     text-transform: none;
