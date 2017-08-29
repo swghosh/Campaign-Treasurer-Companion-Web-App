@@ -82,7 +82,8 @@ function deduct_funds($username, $value) {
 
 function transact_buy($username, $item, $quantity) {
     global $db;
-
+    global $transaction_limit;
+    
     if($price = price($item)) {
         $value = $price * $quantity;
 
