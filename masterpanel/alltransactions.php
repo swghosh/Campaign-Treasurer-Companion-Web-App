@@ -28,12 +28,12 @@
                         if(floatval($value) < 0) {
                             $value = - floatval($value);
                             $quantity = - intval($quantity);
-                            $type = "Buy";
+                            $type = "Sell";
                         }
                         else {
                             $value = floatval($value);
                             $quantity = intval($quantity);
-                            $type = "Sell";
+                            $type = "Buy";
                         }
 
                         $str = "<tr><td>$id</td><td>$name</td><td>$time</td><td>$item</td><td>$quantity</td><td>$$price</td><td>$$value</td><td>$type</td></tr>"."\n";
