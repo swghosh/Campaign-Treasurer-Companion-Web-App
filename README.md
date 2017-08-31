@@ -1,4 +1,4 @@
-![Mac Screenshot of Web App](https://s3.ap-south-1.amazonaws.com/elasticbeanstalk-ap-south-1-329277064181/MacScreenshot.png)
+![Mac Screenshot of Web App](https://www.codecrafts.cf/images/ctcpromo.png)
 # Campaign Treasurer Companion Web App
 _The Web Application features a Simulated Stock and Commodity Market with the facility to allow Virtual Trading._
 
