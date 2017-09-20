@@ -1,4 +1,5 @@
 <?php 
+    // contains common html head and initial code till body
     include('head.php');
 ?>
         <table class="view">
@@ -18,6 +19,8 @@
             <tr class="sector"><td colspan="4" class="sector copyright">© Campaign Treasurer, Prayas 17 Fest, Christ University.<br>Designed and Developed by <a href="https://github.com/swghosh" class="author">Swarup Ghosh</a>.</td></tr>
         </table>
 <?php 
+    // javascript files that are to be executed
     $scripts = array('common.js', 'rulesandabout.js');
+    // contains common html body end and also include script declaration of all filenames specified in scripts array
     include('foot.php'); 
 ?>

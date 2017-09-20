@@ -1,4 +1,5 @@
 <?php
+    // contains common html head and initial code till body
     include('head.php');
 
     include('../db.php');
@@ -52,6 +53,8 @@
         <table class="view" id="data"></table>
     </table>    
 <?php
+    // javascript files that are to be executed    
     $scripts = array('rollbackupdatesloader.js');
+    // contains common html body end and also include script declaration of all filenames specified in scripts array    
     include('foot.php');
 ?>

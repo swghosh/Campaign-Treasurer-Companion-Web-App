@@ -19,7 +19,9 @@
                 </h1>
                 <small class="time">
                     <?php
+                        // time zone is set to Indian Standard Time
                         date_default_timezone_set('Asia/Kolkata');
+                        // date stamp to be echoed
                         echo date('Y-m-d H:i:s')."\n";
                     ?>
                 </small>

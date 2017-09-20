@@ -1,4 +1,5 @@
 <?php 
+    // contains common html head and initial code till body
     include('head.php'); 
 ?>
     <script>

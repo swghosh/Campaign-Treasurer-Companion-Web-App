@@ -1,6 +1,7 @@
 <?php
-
+    // name of the current script from uri
     $current_script = $_SERVER['SCRIPT_NAME'];
+    // array containing list of main pages
     $pages = array(
         '/index.php' => array('Home', '🏠'),
         '/details.php' => array('Details', '📈'),
@@ -8,6 +9,7 @@
         '/news.php' => array('News', '📰'),
         '/about.php' => array('About', '🔬')
     );
+    // name and emoji that should be associated with current script file
     $page_title = $pages[$current_script][0];
 ?>
 
@@ -31,7 +33,9 @@
                 </h1>
                 <small class="time">
                     <?php
+                        // time zone is set to Indian Standard Time
                         date_default_timezone_set('Asia/Kolkata');
+                        // date stamp to be echoed
                         echo date('Y-m-d H:i:s')."\n";
                     ?>
                 </small>

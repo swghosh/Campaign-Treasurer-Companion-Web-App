@@ -1,4 +1,5 @@
 <?php
+    // contains common html head and initial code till body
     include('head.php');
 
     include('../db.php');
@@ -22,6 +23,8 @@
         ?>
         </table>    
 <?php
+    // javascript files that are to be executed
     $scripts = array();
+    // contains common html body end and also include script declaration of all filenames specified in scripts array
     include('foot.php');
 ?>
