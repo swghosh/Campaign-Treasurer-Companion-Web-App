@@ -1,9 +1,13 @@
 <?php
+// username of current user
 $username = $_SERVER['REMOTE_USER'];
 
+// contains several functions to allow trading
 include('tradingfunctions.php');
+// get balance of user
 $balance = balance($username);
 
+// in case of error with form data
 function form_error() {
     die(header('Location: index.php?error'));
 }
@@ -17,6 +21,7 @@ $item = mysqli_real_escape_string($db, htmlspecialchars($_POST['item']));
 $quantity = mysqli_real_escape_string($db, htmlspecialchars($_POST['quantity']));
 
 $value = 0;
+// in case buy not possible due to inadequate balance than transaction value
 if($price = price($item)) {
     $value = $price * $quantity;
     if($balance < $value) {
@@ -24,6 +29,7 @@ if($price = price($item)) {
     }
 }
 
+// make a buy transaction
 if(transact_buy($username, $item, $quantity)) {
     die(header('Location: index.php?success'));
 }

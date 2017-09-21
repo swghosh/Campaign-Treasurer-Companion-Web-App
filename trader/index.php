@@ -1,18 +1,24 @@
 <?php 
     // contains common html head and initial code till body 
     include('../head.php'); 
+    // contains several functions to allow trading
     include('tradingfunctions.php');
 
+    // username of current user
     $username = $_SERVER['REMOTE_USER'];
+    // get balance of user
     $balance = balance($username);
+    // get list of purchased items and quantities of user
     $purchased_items = purchased($username);
 
+    // create connection to database
     include('../db.php');
     // list of items for purchase
     $sql_cryptocurrencies = "SELECT name FROM cryptocurrencies;";
     $sql_commodities = "SELECT name FROM commodities;";
     $sql_stocks = "SELECT name FROM stocks;";
 
+    // array will store list of items (cryptocurrencies and commodities and stocks)
     $items = array();
 
     $res = mysqli_query($db, $sql_cryptocurrencies);
@@ -30,11 +36,15 @@
         $items[] = $ar['name'];
     }
 
+    // total valuation of items is to be calculated
     $total = 0.0;
     foreach($purchased_items as $item => $quantity) {
+        // get the price of the item
         $price = price($item);
+        // get the value
         $value = $price * $quantity;
 
+        // iterations to add to total
         $total = $total + $value;
     }
 ?>
@@ -81,6 +91,7 @@
                     <tr><td colspan="4">Final Portfolio</td></tr>
                     <tr><th>name</th><th>quantity</th><th>market price</th><th>market value</th></tr>
                     <?php
+                        // list of purchased items display as table row
                         foreach($purchased_items as $item => $quantity) {
                             $price = price($item);
                             $value = $price * $quantity;
@@ -103,17 +114,20 @@
                 <tr><td colspan="3">Funds</td></tr>
                 <tr><th>id</th><th>time</th><th>value</th></tr>
                 <?php
+                    // query to list funds for user and display table row
                     $sql = "SELECT id, time, value FROM funds WHERE name = '$username' ORDER BY time;";
                     $res = mysqli_query($db, $sql);
                     while($ar = mysqli_fetch_array($res)) {
                         $id = $ar['id'];
                         $time = $ar['time'];
                         $value = $ar['value'];
-
+                        
+                        // in case of deduct fund
                         if(floatval($value) < 0) {
                             $value = - floatval($value);
                             $value = "-$".$value;
                         }
+                        // in case of grant fund
                         else {
                             $value = floatval($value);
                             $value = "$".$value;
@@ -131,6 +145,7 @@
                 <tr><td colspan="7">Transactions</td></tr>
                 <tr><th>id</th><th>time</th><th>share</th><th>quantity</th><th>price</th><th>value</th><th>type</th></tr>
                 <?php
+                    // query to list transactions for user and table row
                     $sql = "SELECT id, time, item, quantity, price, value FROM transactions WHERE name = '$username' ORDER BY time;";
                     $res = mysqli_query($db, $sql);
                     while($ar = mysqli_fetch_array($res)) {
@@ -142,11 +157,13 @@
                         $value = $ar['value'];
                         
                         $type = "";
+                        // in case of sell transaction
                         if(floatval($value) < 0) {
                             $value = - floatval($value);
                             $quantity = - intval($quantity);
                             $type = "Sell";
                         }
+                        // in case of buy transaction
                         else {
                             $value = floatval($value);
                             $quantity = intval($quantity);
@@ -172,6 +189,7 @@
     </table>
 
     <?php
+        // in case of errors from other script redirection
         if(isset($_GET['error'])) {
             echo '<script>alert("Transaction Error.");</script>';
         }
