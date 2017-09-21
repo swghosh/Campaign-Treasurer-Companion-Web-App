@@ -3,14 +3,17 @@
     include('head.php'); 
 ?>
     <script>
+        // updates object will store arrays of times, fluctuated values, highest and lowest values stored with item name as keys
         var updates = {
 
         };
     </script>
     <table class="view" id="details">
     <?php
+        // make connetion to database
         include_once('db.php');
 
+        // queries to get list of cryptocurrencies, commodities and stocks
         $sql_cryptocurrencies = "SELECT name, current, description, ovalue FROM cryptocurrencies ORDER BY name;";
         $sql_commodities = "SELECT name, current, description, ovalue FROM commodities ORDER BY name;";
         $sql_stocks = "SELECT name, sector, current, difference, percentage, description, pclose, ovalue FROM stocks ORDER BY name;";
@@ -18,6 +21,7 @@
     ?>
             <tr class="sector"><td class="sector">Cryptocurrencies</td></tr> 
     <?php
+        // from list of cryptocurrencies and full profile details make table rows
         $res = mysqli_query($db, $sql_cryptocurrencies);
         while($ar = mysqli_fetch_array($res)) {
             $name = $ar['name'];
@@ -49,7 +53,9 @@
         </tr>";
             echo $str."\n";
             
+            // query to list price updates for currently iterated cryptocurrency
             $sql_updates = "SELECT time, current FROM updates WHERE name = '".$name."' ORDER BY time;";
+            // from list of price updates with time for currently iterated cryptocurrency store to JS updates object
             $res_updates = mysqli_query($db, $sql_updates);
 
             $updates_time = array();
@@ -76,6 +82,7 @@
 
             <tr class="sector"><td class="sector">Commodities</td></tr>
     <?php
+        // from list of commodities and full profile details make table rows
         $res = mysqli_query($db, $sql_commodities);
         while($ar = mysqli_fetch_array($res)) {
             $name = $ar['name'];
@@ -107,7 +114,9 @@
         </tr>";
             echo $str."\n";
             
+            // query to list price updates for currently iterated commodity
             $sql_updates = "SELECT time, current FROM updates WHERE name = '".$name."' ORDER BY time;";
+            // from list of price updates with time for currently iterated commodity store to JS updates object
             $res_updates = mysqli_query($db, $sql_updates);
 
             $updates_time = array();
@@ -134,6 +143,7 @@
             
             <tr class="sector"><td class="sector">Securities</td></tr>
     <?php
+        // from list of stocks and full profile details make table rows
         $res = mysqli_query($db, $sql_stocks);
         while($ar = mysqli_fetch_array($res)) {
             $name = $ar['name'];
@@ -146,6 +156,7 @@
             $ovalue = $ar['ovalue'];
 
             $str = '';
+            // in case of negative difference use all conventions of green, high
             if($difference < 0) {
                 $difference = -$difference;
                 $percentage = -$percentage;
@@ -177,6 +188,7 @@
                     </td>
                 </tr>";
             }
+            // in case of positive difference use all conventions of red, low
             else {
                 $str = "<tr class=\"profile\" id=\"$name\">
                     <td class=\"profile\">
@@ -208,7 +220,9 @@
 
             echo $str."\n";
 
+            // query to list price updates for currently iterated stock
             $sql_updates = "SELECT time, current FROM updates WHERE name = '".$name."' ORDER BY time;";
+             // from list of price updates with time for currently iterated stock store to JS updates object
             $res_updates = mysqli_query($db, $sql_updates);
 
             $updates_time = array();
@@ -234,6 +248,8 @@
     ?>
     </table>
 <?php 
+    // javascript files that are to be executed
     $scripts = array('common.js', '//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js', 'chartjsinit.js', 'generateallcharts.js');
+    // contains common html body end and also include script declaration of all filenames specified in scripts array
     include('foot.php'); 
 ?>

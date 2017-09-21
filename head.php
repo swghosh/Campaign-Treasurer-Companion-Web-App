@@ -43,13 +43,16 @@
             <div class="bottombar">
                 <ul class="tabs">
                     <?php
+                        // iterate across each item in pages list to make anchor links for use in menu
                         foreach($pages as $script_name => $page) {
                             $title = $page[0];
                             $emoji = $page[1];
                             
+                            // in case of iterated page is same as current page use id selected
                             if(strcmp($script_name, $current_script) === 0) {
                                 $str = '<a href="'.$script_name.'" class="tabitem"><li id="selected"><span class="emoji">'.$emoji.'</span><br>'.$title.'</li></a>';
                             }
+                            // else do not use id selected
                             else {
                                 $str = '<a href="'.$script_name.'" class="tabitem"><li><span class="emoji">'.$emoji.'</span><br>'.$title.'</li></a>';
                             }
