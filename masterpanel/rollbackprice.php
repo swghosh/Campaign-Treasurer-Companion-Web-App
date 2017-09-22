@@ -2,14 +2,19 @@
     // contains common html head and initial code till body
     include('head.php');
 
+    // create connection to database
     include('../db.php');
 
+    // query to list names of items (cryptocurrencies / commodities / stocks)
     $sql_cryptocurrencies = "SELECT name FROM cryptocurrencies;";
     $sql_commodities = "SELECT name FROM commodities;";
     $sql_stocks = "SELECT name FROM stocks;";
 
+    // decalre arrays to keep item name and types
     $names = array();
     $types = array();
+
+    // store data into array of item names and types
 
     $res = mysqli_query($db, $sql_cryptocurrencies);
     while($ar = mysqli_fetch_array($res)) {
@@ -39,6 +44,7 @@
                 <form method="POST" action="removestock.php">
                     <select name="item">
                         <?php
+                            // iterate names of items as select items
                             for($i = 0; $i < sizeof($names); $i++) {
                                 $name = $names[$i];
                                 $type = $types[$i];

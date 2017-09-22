@@ -2,6 +2,7 @@
     // contains common html head and initial code till body
     include('head.php');
 
+    // create connection to database
     include('../db.php');
 ?>
         <table class="view" id="panel">
@@ -10,9 +11,11 @@
 
         <tr class="sector"><td colspan="4" class="sector">News Updates</td></tr>
         <?php
+            // query to list news items
             $sql = "SELECT * FROM news ORDER BY time DESC;";
             $res = mysqli_query($db, $sql);
 
+            // iterate list of news to make table tr(s)
             while($ar = mysqli_fetch_array($res)) {
                 $time = $ar['time'];
                 $content = $ar['content'];

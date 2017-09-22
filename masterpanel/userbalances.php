@@ -2,6 +2,7 @@
     // contains common html head and initial code till body 
     include('head.php');
 
+    // create connection to database
     include('../db.php');
 ?>
         <table class="view" id="panel">
@@ -10,9 +11,11 @@
 
         <tr class="sector"><td colspan="4" class="sector">User Balances</td></tr>
         <?php
+            // query to list users and their balances
             $sql = "SELECT name, balance FROM users;";
             $res = mysqli_query($db, $sql);
 
+            // iterate list of users to make table rows with balances
             while($ar = mysqli_fetch_array($res)) {
                 $name = $ar['name'];
                 $balance = $ar['balance'];

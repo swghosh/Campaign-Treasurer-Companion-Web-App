@@ -1,8 +1,10 @@
 <?php
+// create connection to database
 include('../db.php');
 
 header('Content-Type: text/plain');
 
+// in case of error with form data
 function form_error() {
     die('An error occured.');
 }
@@ -15,9 +17,10 @@ if(isset($_POST['id']) == false || empty($_POST['id']) || isset($_POST['time']) 
 $id = mysqli_real_escape_string($db, htmlspecialchars($_POST['id']));
 $time = mysqli_real_escape_string($db, htmlspecialchars($_POST['time']));
 
+// query to remove news entry
 $sql = "DELETE FROM news WHERE id=$id AND time='$time';";
 
-// insert data into database
+// execute query
 if(mysqli_query($db, $sql) == false) {
     form_error();
 }

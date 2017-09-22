@@ -2,6 +2,7 @@
     // contains common html head and initial code till body 
     include('head.php');
 
+    // create connection to database
     include('../db.php');
 ?>
         <table class="view" id="panel">
@@ -14,8 +15,10 @@
                 <tr><td colspan="8">Transactions</td></tr>
                 <tr><th>id</th><th>username</th><th>time</th><th>share</th><th>quantity</th><th>price</th><th>value</th><th>type</th></tr>
                 <?php
+                    // query to list transactions
                     $sql = "SELECT id, name, item, time, quantity, price, value FROM transactions;";
                     $res = mysqli_query($db, $sql);
+                    // iterate transactions to make table tr(s)
                     while($ar = mysqli_fetch_array($res)) {
                         $id = $ar['id'];
                         $name = $ar['name'];
@@ -26,11 +29,13 @@
                         $value = $ar['value'];
                         
                         $type = "";
+                        // when type is sell
                         if(floatval($value) < 0) {
                             $value = - floatval($value);
                             $quantity = - intval($quantity);
                             $type = "Sell";
                         }
+                        // when type is buy
                         else {
                             $value = floatval($value);
                             $quantity = intval($quantity);

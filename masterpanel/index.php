@@ -2,16 +2,21 @@
     // contains common html head and initial code till body
     include('head.php');
 
+    // username of current user
     $username = $_SERVER['REMOTE_USER'];
 
+    // create connection to database
     include('../db.php');
 
+    // query to list items (cryptocurrencies / commodities / stocks)
     $sql_cryptocurrencies = "SELECT name FROM cryptocurrencies;";
     $sql_commodities = "SELECT name FROM commodities;";
     $sql_stocks = "SELECT name FROM stocks;";
 
+    // declare array to store names
     $names = array();
 
+    // iterate items (cryptocurrencies / commodities / stocks)
     $res = mysqli_query($db, $sql_cryptocurrencies);
     while($ar = mysqli_fetch_array($res)) {
         $names[] = $ar['name'];
@@ -27,7 +32,9 @@
         $names[] = $ar['name'];
     }
 
+    // query to list users
     $sql_users = "SELECT name FROM users;";
+    // declare array to store users
     $users = array();
 
     $res = mysqli_query($db, $sql_users);
@@ -79,6 +86,7 @@
                 <form method="POST" action="removestock.php">
                     <select name="item">
                         <?php
+                            // iterate list of names and make select option items
                             foreach($names as $name) {
                                 echo '<option value="'.$name.'">'.$name.'</option>'."\n";
                             }
@@ -93,6 +101,7 @@
                 <form method="POST" action="updateprice.php">
                     <select name="item">
                         <?php
+                            // iterate list of names and make select option items
                             foreach($names as $name) {
                                 echo '<option value="'.$name.'">'.$name.'</option>'."\n";
                             }
@@ -131,6 +140,7 @@
                 <form method="POST" action="grantfunds.php">
                     user <select name="user">
                         <?php
+                            // iterate list of usernames and make select option items
                             foreach($users as $name) {
                                 echo '<option value="'.$name.'">'.$name.'</option>'."\n";
                             }
@@ -146,6 +156,7 @@
                 <form method="POST" action="deductfunds.php">
                     user <select name="user">
                         <?php
+                            // iterate list of usernames and make select option items
                             foreach($users as $name) {
                                 echo '<option value="'.$name.'">'.$name.'</option>'."\n";
                             }

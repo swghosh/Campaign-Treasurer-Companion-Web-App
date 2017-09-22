@@ -1,8 +1,10 @@
 <?php
 header('Content-Type: text/plain');
 
+// create connection to database
 include('../db.php');
 
+// in case of error with form data
 function form_error() {
     die('An error occured.');
 }
@@ -17,6 +19,7 @@ date_default_timezone_set('Asia/Kolkata');
 $news = mysqli_real_escape_string($db, htmlspecialchars($_POST['content']));
 $time = date('Y-m-d H:i:s');
 
+// query to insert entry to news
 $sql = "INSERT INTO news (time, content) VALUES ('$time','$news');";
 
 // insert data into database
