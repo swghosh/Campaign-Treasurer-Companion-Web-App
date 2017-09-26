@@ -170,6 +170,9 @@
             <tr class="stock" onclick="document.location = 'userbalances.php';"><td class="name"><a href="userbalances.php" class="link">User Balances <span class="arrow ext">⎋</span></a></td></tr>
             <tr class="stock" onclick="document.location = 'alltransactions.php';"><td class="name"><a href="alltransactions.php" class="link">All Transactions <span class="arrow ext">⎋</span></a></td></tr>
             
+            <tr class="sector"><td colspan="4" class="sector">Reset</td></tr>
+            <tr class="stock" onclick="document.location = 'resetall.php';"><td class="name"><a href="resetall.php" class="link">Factory Reset <span class="arrow ext">⎋</span></a></td></tr>
+
             <tr class="sector"><td colspan="4" class="sector copyright"><b>Please do not use this panel without the authorisation/permission of the market administrator/stock exchange board.</b><br><br>© Campaign Treasurer, Prayas 17 Fest, Christ University.<br>Designed and Developed by <a href="https://github.com/swghosh" class="author">Swarup Ghosh</a>.</td></tr>
         </table>    
 <?php
