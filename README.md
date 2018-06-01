@@ -1,4 +1,4 @@
-![Mac Screenshot of Web App](https://www.codecrafts.cf/images/ctcpromo.png)
+![Mac Screenshot of Web App](https://swghosh.github.io/images/ctcpromo.png)
 # Campaign Treasurer Companion Web App
 _The Web Application features a Simulated Stock and Commodity Market with the facility to allow Virtual Trading._
 
