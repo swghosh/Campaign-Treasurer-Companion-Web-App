@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
+
 * {
     transition: all 0.5s;
 }
 body {
     margin: 0;
-    font-family: 'Helvetica Neue';
+    font-family: 'Helvetica Neue', 'Open Sans', sans-serif;
     font-weight: 200;
     background-color: rgba(0, 0, 0, 0.15);
 }
@@ -26,7 +28,7 @@ div.topbar h1 {
     text-align: center;
     color: #fff;
     text-transform: capitalize;
-    font-family: 'Helvetica Neue';
+    font-family: 'Helvetica Neue', 'Open Sans', sans-serif;
     font-weight: 200;
     margin-top: 0;
     margin-bottom: 0;
@@ -87,7 +89,7 @@ a.tabitem {
     text-decoration: none;
 }
 table.view {
-    font-family: 'Helvetica Neue';
+    font-family: 'Helvetica Neue', 'Open Sans', sans-serif;
     font-weight: 300;
     margin-top: 22vh;
     margin-bottom: 22vh;
@@ -219,7 +221,7 @@ table.view td.profile {
     word-wrap: break-word;
 }
 table.view td.profile h1 {
-    font-family: 'Helvetica Neue';
+    font-family: 'Helvetica Neue', 'Open Sans', sans-serif;
     text-transform: uppercase;
     font-size: 1.4em;
     font-weight: 200;
@@ -270,7 +272,7 @@ textarea, input[type=text], input[type=number] {
     border: none;
     outline: none;
     border-bottom: 2px solid rgba(0, 0, 100, 0.4);
-    font-family: 'Helvetica Neue';
+    font-family: 'Helvetica Neue', 'Open Sans', sans-serif;
     font-weight: 200;
     font-size: 1.2em;
     width: 80%;
@@ -283,7 +285,7 @@ input[type=number] {
 input[type=submit], button {
     padding: 2vh;
     border: none;
-    font-family: 'Helvetica Neue';
+    font-family: 'Helvetica Neue', 'Open Sans', sans-serif;
     font-weight: 200;
     font-size: 1.05em;
     border-radius: 5%;
@@ -298,7 +300,7 @@ select {
     border: none;
     border-bottom: 2px solid rgba(0, 0, 100, 0.6);
     outline: none;
-    font-family: 'Helvetica Neue';
+    font-family: 'Helvetica Neue', 'Open Sans', sans-serif;
     font-weight: 200;
     font-size: 1.1em;
     background-color: rgba(0, 0, 0, 0);
