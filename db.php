@@ -1,9 +1,8 @@
 <?php
 // set database settings
-$db_host = getenv("RDS_HOSTNAME");
-$db_username = getenv("RDS_USERNAME");
-$db_password = getenv("RDS_PASSWORD");
-$db_port = getenv("RDS_PORT");
-$db_database = getenv("RDS_DB");
+$db_username = getenv("MYSQL_USERNAME");
+$db_password = getenv("MYSQL_PASSWORD");
+$db_database = getenv("MYSQL_DATABASE");
+$db_socket = getenv("MYSQL_SOCKET");
 // connect to database
-$db = mysqli_connect($db_host, $db_username, $db_password, $db_database, $db_port) or die("Database connection failed.");
+$db = mysqli_connect(NULL, $db_username, $db_password, $db_database, NULL, $db_socket) or die("Database connection failed.");
