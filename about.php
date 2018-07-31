@@ -16,7 +16,7 @@
             <tr class="stock" onclick="document.location = 'https://github.com/swghosh/Campaign-Treasurer-Companion-Web-App/blob/master/LICENSE.MD';"><td class="name"><a href="https://github.com/swghosh/Campaign-Treasurer-Companion-Web-App/blob/master/LICENSE.MD" class="link">License   <span class="arrow ext">⎋</span></a></td></tr>
             <tr class="stock" onclick="document.location = 'https://github.com/swghosh/Campaign-Treasurer-Companion-Web-App';"><td class="name"><a href="https://github.com/swghosh/Campaign-Treasurer-Companion-Web-App" class="link">Open-source Project on GitHub   <span class="arrow ext">⎋</span></a></td></tr>
             
-            <tr class="sector"><td colspan="4" class="sector copyright">© Campaign Treasurer, Prayas 17 Fest, Christ University.<br>Designed and Developed by <a href="https://github.com/swghosh" class="author">Swarup Ghosh</a>.</td></tr>
+            <tr class="sector"><td colspan="4" class="sector copyright">© Campaign Treasurer.<br>Designed and Developed by <a href="https://github.com/swghosh" class="author">Swarup Ghosh</a>.</td></tr>
         </table>
 <?php 
     // javascript files that are to be executed
