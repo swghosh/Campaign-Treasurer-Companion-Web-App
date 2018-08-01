@@ -4,8 +4,8 @@
     // contains several functions to allow trading
     include('tradingfunctions.php');
 
-    // username of current user
-    $username = $_SERVER['REMOTE_USER'];
+    // will get username of current user
+    include('authorisation.php');
     // get balance of user
     $balance = balance($username);
     // get list of purchased items and quantities of user

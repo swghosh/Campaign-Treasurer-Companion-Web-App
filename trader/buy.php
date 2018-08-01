@@ -1,6 +1,6 @@
 <?php
-// username of current user
-$username = $_SERVER['REMOTE_USER'];
+// will get username of current user
+include('authorisation.php');
 
 // contains several functions to allow trading
 include('tradingfunctions.php');
