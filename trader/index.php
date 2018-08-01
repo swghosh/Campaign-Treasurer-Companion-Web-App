@@ -1,11 +1,12 @@
 <?php 
+    // will get username of current user
+    include('authorisation.php');
+
     // contains common html head and initial code till body 
     include('../head.php'); 
     // contains several functions to allow trading
     include('tradingfunctions.php');
 
-    // will get username of current user
-    include('authorisation.php');
     // get balance of user
     $balance = balance($username);
     // get list of purchased items and quantities of user
@@ -50,7 +51,7 @@
 ?>
     <table class="view">
         <tr class="sector">
-            <td class="user">username: <span class="user"><?php echo $username; ?></span> (logged-in)<br>available funds: <span class="user">$<?php echo $balance; ?></span><br>market portfolio value: <span class="user">$<?php echo $total; ?></span><br><br>total value: <span class="user">$<?php echo ($total + $balance); ?></span><br><br><a href="<?php $urlout = '//logout:logout@'.$_SERVER['HTTP_HOST'].$_SERVER['SCRIPT_NAME']; echo $urlout; ?>" class="author">log out</a></td>
+            <td class="user">username: <span class="user"><?php echo $username; ?></span> (logged-in)<br>available funds: <span class="user">$<?php echo $balance; ?></span><br>market portfolio value: <span class="user">$<?php echo $total; ?></span><br><br>total value: <span class="user">$<?php echo ($total + $balance); ?></span><br><br><a href="<?php echo $logoutUrl; ?>" class="author">log out</a></td>
         </tr>
         
 

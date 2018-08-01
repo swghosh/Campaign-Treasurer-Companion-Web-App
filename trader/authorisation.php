@@ -6,6 +6,7 @@ $user = UserService::getCurrentUser();
 
 if(isset($user) && ($user->getEmail() == 'snwg@live.com')) {
     $username = 'alpha';
+    $logoutUrl = UserService::createLogoutUrl('/');
 } else {
     die('Authorisation failed. Please use this portion of the application with an app authorised Google Account logged in.');
 }
