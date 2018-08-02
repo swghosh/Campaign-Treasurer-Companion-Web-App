@@ -6,9 +6,7 @@ include('../db.php');
 
 // database query statements
 // query to reset everything to initial state
-$sqlfile = fopen("resetall.sql", "r");
-$sql = fread($sqlfile, filesize("resetall.sql"));
-fclose($sqlfile);
+$sql = file_get_contents('https://storage.googleapis.com/campaign-treasurer-companion.appspot.com/resetall.sql');
 
 // execute queries together
 if(mysqli_multi_query($db, $sql) == false) {
