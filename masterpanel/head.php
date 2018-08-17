@@ -8,8 +8,7 @@
         <link rel="stylesheet" href="/base.css" type="text/css" />
         <meta name="theme-color" content="#024">
         <meta name="author" content="SwG Ghosh">
-        <meta name="description" content="The Campaign Treasurer Companion Master Panel as a Web App for Prayas'17 fest.">
-        <meta name="og:url" content="https://campaigntreasurercompanion.codecrafts.cf<?php echo $current_script; ?>">
+        <meta name="description" content="The Campaign Treasurer Companion Master Panel as a Web App for Prayas fest.">
     </head>
     <body>
         <div class="bars">
