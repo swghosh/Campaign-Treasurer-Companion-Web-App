@@ -105,7 +105,7 @@
 
             <br>
             <table class="transactions">
-                <tr><td colspan="4">Total Portfolio Value = $<?php echo $total; ?></td></tr>
+                <tr><td colspan="4">Total Portfolio Value = ₹<?php echo $total; ?></td></tr>
             </table>
 
         </td></tr>
