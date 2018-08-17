@@ -3,7 +3,7 @@
     include('head.php');
 
     // username of current user
-    $username = $_SERVER['REMOTE_USER'];
+    $username = 'superuser';
 
     // create connection to database
     include('../db.php');

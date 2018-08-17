@@ -51,7 +51,7 @@
 ?>
     <table class="view">
         <tr class="sector">
-            <td class="user">username: <span class="user"><?php echo $username; ?></span> (logged-in)<br>available funds: <span class="user">$<?php echo $balance; ?></span><br>market portfolio value: <span class="user">$<?php echo $total; ?></span><br><br>total value: <span class="user">$<?php echo ($total + $balance); ?></span><br><br><a href="<?php echo $logoutUrl; ?>" class="author">log out</a></td>
+            <td class="user">username: <span class="user"><?php echo $username; ?></span><br>available funds: <span class="user">$<?php echo $balance; ?></span><br>market portfolio value: <span class="user">$<?php echo $total; ?></span><br><br>total value: <span class="user">$<?php echo ($total + $balance); ?></span><br><br><a href="<?php echo $logoutUrl; ?>" class="author">log out</a></td>
         </tr>
         
 
