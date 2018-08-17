@@ -74,8 +74,8 @@
                     </select><br><br>
                     <input type="text" name="name" placeholder="name" /><br><br>
                     <input type="text" name="sector" placeholder="sector" /><br><br>
-                    <label for="pclose">previous close $</label> <input type="number" step="any" name="pclose" placeholder="previous close" /><br><br>
-                    <label for="ovalue">open value $</label> <input type="number" step="any" name="ovalue" placeholder="open value" /><br><br>
+                    <label for="pclose">previous close ₹</label> <input type="number" step="any" name="pclose" placeholder="previous close" /><br><br>
+                    <label for="ovalue">open value ₹</label> <input type="number" step="any" name="ovalue" placeholder="open value" /><br><br>
                     <textarea name="description" placeholder="description"></textarea><br><br>
                     <input type="submit" value="Add Listing" />
                 </form>
@@ -107,7 +107,7 @@
                             }
                         ?>
                     </select><br><br>
-                    $ <input type="number" step="any" name="current" placeholder="new price" /><br>
+                    ₹ <input type="number" step="any" name="current" placeholder="new price" /><br>
                     <input type="submit" value="Update Price" />
                 </form>
                 <br><br>
@@ -146,7 +146,7 @@
                             }
                         ?>
                     </select><br><br>
-                    amount $ <input type="number" step="any" name="value" placeholder="amount" /><br>
+                    amount ₹ <input type="number" step="any" name="value" placeholder="amount" /><br>
                     <input type="submit" value="Grant Fund" />
                 </form>
                 <br><br>
@@ -162,7 +162,7 @@
                             }
                         ?>
                     </select><br><br>
-                    amount $ <input type="number" step="any" name="value" placeholder="amount" /><br>
+                    amount ₹ <input type="number" step="any" name="value" placeholder="amount" /><br>
                     <input type="submit" value="Deduct Fund" />
                 </form>
                 <br><br>
