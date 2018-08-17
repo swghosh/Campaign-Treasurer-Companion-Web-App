@@ -51,7 +51,7 @@
 ?>
     <table class="view">
         <tr class="sector">
-            <td class="user">username: <span class="user"><?php echo $username; ?></span><br>available funds: <span class="user">$<?php echo $balance; ?></span><br>market portfolio value: <span class="user">$<?php echo $total; ?></span><br><br>total value: <span class="user">$<?php echo ($total + $balance); ?></span><br><br><a href="<?php echo $logoutUrl; ?>" class="author">log out</a></td>
+            <td class="user">username: <span class="user"><?php echo $username; ?></span><br>available funds: <span class="user">₹<?php echo $balance; ?></span><br>market portfolio value: <span class="user">₹<?php echo $total; ?></span><br><br>total value: <span class="user">₹<?php echo ($total + $balance); ?></span><br><br><a href="<?php echo $logoutUrl; ?>" class="author">log out</a></td>
         </tr>
         
 
@@ -97,7 +97,7 @@
                             $price = price($item);
                             $value = $price * $quantity;
 
-                            $str = "<tr><td>$item</td><td>$quantity</td><td>$$price</td><td>$$value</td></tr>"."\n";
+                            $str = "<tr><td>$item</td><td>$quantity</td><td>₹$price</td><td>₹$value</td></tr>"."\n";
                             echo $str;
                         }
                     ?>
@@ -126,12 +126,12 @@
                         // in case of deduct fund
                         if(floatval($value) < 0) {
                             $value = - floatval($value);
-                            $value = "-$".$value;
+                            $value = "-₹".$value;
                         }
                         // in case of grant fund
                         else {
                             $value = floatval($value);
-                            $value = "$".$value;
+                            $value = "₹".$value;
                         }
 
                         $str = "<tr><td>$id</td><td>$time</td><td>$value</td></tr>"."\n";
@@ -171,7 +171,7 @@
                             $type = "Buy";
                         }
 
-                        $str = "<tr><td>$id</td><td>$time</td><td>$item</td><td>$quantity</td><td>$$price</td><td>$$value</td><td>$type</td></tr>"."\n";
+                        $str = "<tr><td>$id</td><td>$time</td><td>$item</td><td>$quantity</td><td>₹$price</td><td>₹$value</td><td>$type</td></tr>"."\n";
                         echo $str;
                     }
                 ?>
@@ -179,11 +179,11 @@
 
             <br>
             <table class="transactions">
-                <tr><td colspan="4">Total Portfolio Value = $<?php echo $total; ?></td></tr>
+                <tr><td colspan="4">Total Portfolio Value = ₹<?php echo $total; ?></td></tr>
             </table>
             <br>
             <table class="transactions">
-                <tr><td colspan="6">Available Balance = $<?php echo $balance; ?></td></tr>
+                <tr><td colspan="6">Available Balance = ₹<?php echo $balance; ?></td></tr>
             </table>
         </td></tr>
 
