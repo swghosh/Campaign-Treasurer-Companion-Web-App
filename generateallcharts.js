@@ -13,6 +13,6 @@ for(var key in updates) {
     var highestBlock = document.getElementById(key).querySelector('b.highest');
 
     // add highest and lowest values to the respective b node
-    lowestBlock.innerHTML = '$' + item.lowest;
-    highestBlock.innerHTML = '$' + item.highest;
+    lowestBlock.innerHTML = '₹' + item.lowest;
+    highestBlock.innerHTML = '₹' + item.highest;
 }

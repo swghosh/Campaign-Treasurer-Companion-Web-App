@@ -32,7 +32,7 @@
             $str = "<tr class=\"profile\" id=\"$name\">
             <td class=\"profile\">
                 <h1>
-                    $name <b>($$current)</b>
+                    $name <b>(₹$current)</b>
                 </h1>
                 <h3></h3>
                 <br>
@@ -41,14 +41,14 @@
                 </p>
                 <br>
                 <br>
-                Open Value: <b>$$ovalue</b>
+                Open Value: <b>₹$ovalue</b>
                 <br>
                 <canvas id=\"chart $name\" class=\"chart\"></canvas>
                 <br>
                 <br>
-                Highest Value: <b class=\"highest\">$</b>
+                Highest Value: <b class=\"highest\">₹</b>
                 <br>
-                Lowest Value: <b class=\"lowest\">$</b>
+                Lowest Value: <b class=\"lowest\">₹</b>
             </td>
         </tr>";
             echo $str."\n";
@@ -93,7 +93,7 @@
             $str = "<tr class=\"profile\" id=\"$name\">
             <td class=\"profile\">
                 <h1>
-                    $name <b>($$current)</b>
+                    $name <b>(₹$current)</b>
                 </h1>
                 <h3></h3>
                 <br>
@@ -102,14 +102,14 @@
                 </p>
                 <br>
                 <br>
-                Open Value: <b>$$ovalue</b>
+                Open Value: <b>₹$ovalue</b>
                 <br>
                 <canvas id=\"chart $name\" class=\"chart\"></canvas>
                 <br>
                 <br>
-                Highest Value: <b class=\"highest\">$</b>
+                Highest Value: <b class=\"highest\">₹</b>
                 <br>
-                Lowest Value: <b class=\"lowest\">$</b>
+                Lowest Value: <b class=\"lowest\">₹</b>
             </td>
         </tr>";
             echo $str."\n";
@@ -164,7 +164,7 @@
                 $str = "<tr class=\"profile\" id=\"$name\">
                     <td class=\"profile\">
                         <h1>
-                            $name <b>($$current, <span class=\"not_inverted triangle\">&#9650;</span>$$difference, $percentage%)</b>
+                            $name <b>(₹$current, <span class=\"not_inverted triangle\">&#9650;</span>₹$difference, $percentage%)</b>
                         </h1>
                         <h3>
                             $sector
@@ -175,16 +175,16 @@
                         </p>
                         <br>
                         <br>
-                        Previous Close: <b>$$pclose</b>
+                        Previous Close: <b>₹$pclose</b>
                         <br>
-                        Open Value: <b>$$ovalue</b>
+                        Open Value: <b>₹$ovalue</b>
                         <br>
                         <canvas id=\"chart $name\" class=\"chart\"></canvas>
                         <br>
                         <br>
-                        Highest Value: <b class=\"highest\">$</b>
+                        Highest Value: <b class=\"highest\">₹</b>
                         <br>
-                        Lowest Value: <b class=\"lowest\">$</b>
+                        Lowest Value: <b class=\"lowest\">₹</b>
                     </td>
                 </tr>";
             }
@@ -193,7 +193,7 @@
                 $str = "<tr class=\"profile\" id=\"$name\">
                     <td class=\"profile\">
                         <h1>
-                            $name <b>($$current, <span class=\"inverted triangle\">&#9660;</span>$$difference, $percentage%)</b>
+                            $name <b>(₹$current, <span class=\"inverted triangle\">&#9660;</span>₹$difference, $percentage%)</b>
                         </h1>
                         <h3>
                             $sector
@@ -204,16 +204,16 @@
                         </p>
                         <br>
                         <br>
-                        Previous Close: <b>$$pclose</b>
+                        Previous Close: <b>₹$pclose</b>
                         <br>
-                        Open Value: <b>$$ovalue</b>
+                        Open Value: <b>₹$ovalue</b>
                         <br>
                         <canvas id=\"chart $name\" class=\"chart\"></canvas>
                         <br>
                         <br>
-                        Highest Value: <b class=\"highest\">$</b>
+                        Highest Value: <b class=\"highest\">₹</b>
                         <br>
-                        Lowest Value: <b class=\"lowest\">$</b>
+                        Lowest Value: <b class=\"lowest\">₹</b>
                     </td>
                 </tr>";
             }
