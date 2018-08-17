@@ -44,7 +44,7 @@
 ?>
         <table class="view" id="panel">
             
-            <tr class="sector"><td class="user">masterpanel,<br>access granted to: <span class="user"><?php echo $username; ?></span><br><br><a href="<?php $urlout = '//logout:logout@'.$_SERVER['HTTP_HOST'].$_SERVER['SCRIPT_NAME']; echo $urlout; ?>" class="author">log out</a></td></tr>
+            <tr class="sector"><td class="user">masterpanel, access granted to: <span class="user"><?php echo $username; ?></span><br></td></tr>
             
             <tr class="sector"><td colspan="4" class="sector">Home</td></tr>
             <tr class="stock" onclick="document.location = '/';"><td class="name"><a href="/" class="link">Campaign Treasurer Companion Home <span class="arrow ext">⎋</span></a></td></tr>
