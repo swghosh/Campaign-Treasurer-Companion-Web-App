@@ -7,7 +7,7 @@
 ?>
         <table class="view" id="panel">
         <tr class="sector"><td colspan="4" class="sector">Navigate</td></tr>
-        <tr class="stock" onclick="document.location = '/masterpanel';"><td class="name"><a href="/masterpanel" class="link">Master Panel<span class="arrow ext">⎋</span></a></td></tr>
+        <tr class="stock" onclick="document.location = '/masterpanel/';"><td class="name"><a href="/masterpanel/" class="link">Master Panel<span class="arrow ext">⎋</span></a></td></tr>
 
         <tr class="sector"><td colspan="4" class="sector">News Updates</td></tr>
         <?php

@@ -11,7 +11,7 @@
     </div>
     <table class="view" id="panel">
         <tr class="sector"><td colspan="2" class="sector">Navigate</td></tr>
-        <tr class="stock" onclick="document.location = '/masterpanel';"><td class="name" colspan="2"><a href="/masterpanel" class="link">Master Panel<span class="arrow ext">⎋</span></a></td></tr>
+        <tr class="stock" onclick="document.location = '/masterpanel/';"><td class="name" colspan="2"><a href="/masterpanel/" class="link">Master Panel<span class="arrow ext">⎋</span></a></td></tr>
         <tr class="sector"><td colspan="2" class="sector">Active Buyers</td></tr>
         <?php
             // get list of active buyers
