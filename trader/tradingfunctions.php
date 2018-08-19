@@ -4,8 +4,8 @@ include('../db.php');
 // time zone is set to Indian Standard Time
 date_default_timezone_set('Asia/Kolkata');
 
-// limit is set to 5 million per transaction
-$transaction_limit = 5000000; // 5 million
+// limit is set per transaction from env var
+$transaction_limit = intval(getenv('TRANSACTION_LIMIT'));
 
 // function to get the live price of an item (cryptocurrency / commodity / stock)
 function price($item) {
