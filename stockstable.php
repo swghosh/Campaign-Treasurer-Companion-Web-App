@@ -21,6 +21,11 @@
     <?php
         // from list of cryptocurrencies and their live prices make table rows
         $res = mysqli_query($db, $sql_cryptocurrencies);
+        if(mysqli_num_rows($res) == 0) {
+            $str = '<tr class="stock"><td class="name" colspan="4">No Cryptocurrencies Available.</td></tr>';
+            echo $str."\n";
+        }
+
         while($ar = mysqli_fetch_array($res)) {
             $name = $ar['name'];
             $current = $ar['current'];
@@ -33,6 +38,10 @@
     <?php
         // from list of commodities and their live prices make table rows
         $res = mysqli_query($db, $sql_commodities);
+        if(mysqli_num_rows($res) == 0) {
+            $str = '<tr class="stock"><td class="name" colspan="4">No Commodities Available.</td></tr>';
+            echo $str."\n";
+        }
         while($ar = mysqli_fetch_array($res)) {
             $name = $ar['name'];
             $current = $ar['current'];
@@ -45,6 +54,10 @@
     <?php
         // from list of stocks and their live prices, difference, percentage make table rows
         $res = mysqli_query($db, $sql_stocks);
+        if(mysqli_num_rows($res) == 0) {
+            $str = '<tr class="stock"><td class="name" colspan="4">No Securities Available.</td></tr>';
+            echo $str."\n";
+        }
         while($ar = mysqli_fetch_array($res)) {
             $name = $ar['name'];
             $sector = $ar['sector'];

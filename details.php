@@ -23,6 +23,10 @@
     <?php
         // from list of cryptocurrencies and full profile details make table rows
         $res = mysqli_query($db, $sql_cryptocurrencies);
+        if(mysqli_num_rows($res) == 0) {
+            $str = '<tr class="profile"><td class="profile">No Cryptocurrencies Available.</td></tr>';
+            echo $str."\n";
+        }
         while($ar = mysqli_fetch_array($res)) {
             $name = $ar['name'];
             $current = $ar['current'];
@@ -84,6 +88,10 @@
     <?php
         // from list of commodities and full profile details make table rows
         $res = mysqli_query($db, $sql_commodities);
+        if(mysqli_num_rows($res) == 0) {
+            $str = '<tr class="profile"><td class="profile">No Commodities Available.</td></tr>';
+            echo $str."\n";
+        }
         while($ar = mysqli_fetch_array($res)) {
             $name = $ar['name'];
             $current = $ar['current'];
@@ -145,6 +153,10 @@
     <?php
         // from list of stocks and full profile details make table rows
         $res = mysqli_query($db, $sql_stocks);
+        if(mysqli_num_rows($res) == 0) {
+            $str = '<tr class="profile"><td class="profile">No Securities Available.</td></tr>';
+            echo $str."\n";
+        }
         while($ar = mysqli_fetch_array($res)) {
             $name = $ar['name'];
             $sector = $ar['sector'];
