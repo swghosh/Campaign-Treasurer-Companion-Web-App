@@ -9,7 +9,7 @@
             <tr class="news" id="about"><td class="time"></td><td class="news">Campaign Treasurer Companion Web App is an application that allows participants to trade securities, commodities and cryptocurrencies based on a virtual stock market/commodity market simulation taking place at the event itself. It does not reflect the values of any real stock exchange hence, user discretion is advised. Target audience is restricted to participants and event volunteers only.<br><br></td></tr>
             
             <tr class="stock" id="rules"><td class="name">Rules, Regulations and Disclaimer <span id="rules" class="arrow">⌵</span></td></tr>
-            <tr class="news" id="rules"><td class="time">Ruleset</td><td class="news">The ruleset is available <a href="https://goo.gl/hbs1k2">here</a>.</td></tr>
+            <tr class="news" id="rules"><td class="time">Ruleset</td><td class="news"><?php echo file_get_contents(getenv('RULESET_HTML_URL')); ?></td></tr>
             
             <tr class="sector"><td class="sector">Project</td></tr>
             

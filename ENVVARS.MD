@@ -10,3 +10,4 @@
 | UPDATER_USERNAME | Defines the HTTP access username that is to be used to authenticate updater/* |
 | UPDATER_PASSWORD | Defines the HTTP access password that is to be used to authenticate updater/* |
 | TRANSACTION_LIMIT | Defines a value that is to be used by the app internally for trader transaction limit |
+| RULESET_HTML_URL | Defines an URL that has html for the ruleset that is to be shown in the About > Rules section |
