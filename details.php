@@ -14,74 +14,74 @@
         include_once('db.php');
 
         // queries to get list of cryptocurrencies, commodities and stocks
-        $sql_cryptocurrencies = "SELECT name, current, description, ovalue FROM cryptocurrencies ORDER BY name;";
+        // $sql_cryptocurrencies = "SELECT name, current, description, ovalue FROM cryptocurrencies ORDER BY name;";
         $sql_commodities = "SELECT name, current, description, ovalue FROM commodities ORDER BY name;";
         $sql_stocks = "SELECT name, sector, current, difference, percentage, description, pclose, ovalue FROM stocks ORDER BY name;";
 
     ?>
-            <tr class="sector"><td class="sector">Cryptocurrencies</td></tr> 
+            <!-- <tr class="sector"><td class="sector">Cryptocurrencies</td></tr>  -->
     <?php
-        // from list of cryptocurrencies and full profile details make table rows
-        $res = mysqli_query($db, $sql_cryptocurrencies);
-        if(mysqli_num_rows($res) == 0) {
-            $str = '<tr class="profile"><td class="profile">No Cryptocurrencies Available.</td></tr>';
-            echo $str."\n";
-        }
-        while($ar = mysqli_fetch_array($res)) {
-            $name = $ar['name'];
-            $current = $ar['current'];
-            $description = mysqli_real_escape_string($db, $ar['description']);
-            $ovalue = $ar['ovalue'];
+        // // from list of cryptocurrencies and full profile details make table rows
+        // $res = mysqli_query($db, $sql_cryptocurrencies);
+        // if(mysqli_num_rows($res) == 0) {
+        //     $str = '<tr class="profile"><td class="profile">No Cryptocurrencies Available.</td></tr>';
+        //     echo $str."\n";
+        // }
+        // while($ar = mysqli_fetch_array($res)) {
+        //     $name = $ar['name'];
+        //     $current = $ar['current'];
+        //     $description = mysqli_real_escape_string($db, $ar['description']);
+        //     $ovalue = $ar['ovalue'];
 
-            $str = "<tr class=\"profile\" id=\"$name\">
-            <td class=\"profile\">
-                <h1>
-                    $name <b>(₹$current)</b>
-                </h1>
-                <h3></h3>
-                <br>
-                <p>
-                    $description
-                </p>
-                <br>
-                <br>
-                Open Value: <b>₹$ovalue</b>
-                <br>
-                <canvas id=\"chart $name\" class=\"chart\"></canvas>
-                <br>
-                <br>
-                Highest Value: <b class=\"highest\">₹</b>
-                <br>
-                Lowest Value: <b class=\"lowest\">₹</b>
-            </td>
-        </tr>";
-            echo $str."\n";
+        //     $str = "<tr class=\"profile\" id=\"$name\">
+        //     <td class=\"profile\">
+        //         <h1>
+        //             $name <b>(₹$current)</b>
+        //         </h1>
+        //         <h3></h3>
+        //         <br>
+        //         <p>
+        //             $description
+        //         </p>
+        //         <br>
+        //         <br>
+        //         Open Value: <b>₹$ovalue</b>
+        //         <br>
+        //         <canvas id=\"chart $name\" class=\"chart\"></canvas>
+        //         <br>
+        //         <br>
+        //         Highest Value: <b class=\"highest\">₹</b>
+        //         <br>
+        //         Lowest Value: <b class=\"lowest\">₹</b>
+        //     </td>
+        // </tr>";
+        //     echo $str."\n";
             
-            // query to list price updates for currently iterated cryptocurrency
-            $sql_updates = "SELECT time, current FROM updates WHERE name = '".$name."' ORDER BY time;";
-            // from list of price updates with time for currently iterated cryptocurrency store to JS updates object
-            $res_updates = mysqli_query($db, $sql_updates);
+        //     // query to list price updates for currently iterated cryptocurrency
+        //     $sql_updates = "SELECT time, current FROM updates WHERE name = '".$name."' ORDER BY time;";
+        //     // from list of price updates with time for currently iterated cryptocurrency store to JS updates object
+        //     $res_updates = mysqli_query($db, $sql_updates);
 
-            $updates_time = array();
-            $updates_values = array();
+        //     $updates_time = array();
+        //     $updates_values = array();
 
-            while($u = mysqli_fetch_array($res_updates)) {
-                $t = $u['time'];
-                $c = floatval($u['current']);
+        //     while($u = mysqli_fetch_array($res_updates)) {
+        //         $t = $u['time'];
+        //         $c = floatval($u['current']);
 
-                $updates_time[] = $t;
-                $updates_values[] = $c;
-            }
+        //         $updates_time[] = $t;
+        //         $updates_values[] = $c;
+        //     }
 
-            $jsobj = array(
-                'times' => $updates_time,
-                'values' => $updates_values,
-                'highest' => max($updates_values),
-                'lowest' => min($updates_values)
-            );
+        //     $jsobj = array(
+        //         'times' => $updates_time,
+        //         'values' => $updates_values,
+        //         'highest' => max($updates_values),
+        //         'lowest' => min($updates_values)
+        //     );
 
-            echo '<script>updates["'.$name.'"] = '.json_encode($jsobj).';</script>';
-        }
+        //     echo '<script>updates["'.$name.'"] = '.json_encode($jsobj).';</script>';
+        // }
     ?>
 
             <tr class="sector"><td class="sector">Commodities</td></tr>
